@@ -1,5 +1,5 @@
 name: "RSD Workshop"
-output_dir: html
+output_dir: ../html
 exclude: ["Example.md"]
 navbar:
   title: "RNA-Seq Demystified"

@@ -11,7 +11,7 @@
 
 <meta name="author" content="UM Bioinformatics Core" />
 
-<meta name="date" content="2021-11-16" />
+<meta name="date" content="2021-12-06" />
 
 <title>Day 3 - Module 11: DE Visualizations and Gene Annotations</title>
 
@@ -457,7 +457,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Day 3 - Module 11: DE Visualizations and Gene Annotations</h1>
 <h4 class="author">UM Bioinformatics Core</h4>
-<h4 class="date">2021-11-16</h4>
+<h4 class="date">2021-12-06</h4>
 
 </div>
 
@@ -494,17 +494,17 @@ code.r{
 </ul>
 </blockquote>
 <div id="differential-expression-workflow" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Differential Expression Workflow</h1>
+<h1 number="1"><span class="header-section-number">1</span> Differential Expression Workflow</h1>
 <p>Here we will generate summary figures for our results and annotate our DE tables.</p>
 <p><img src="images/wayfinder/wayfinder-06.png" style="width:75.0%" /></p>
 <p><strong>TODO: double check references to annotated table prior to running annotations</strong></p>
 <hr />
 </div>
 <div id="visualizing-de-results" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Visualizing DE results</h1>
+<h1 number="2"><span class="header-section-number">2</span> Visualizing DE results</h1>
 <p>Part of differential expression analysis is generating visualizations to share our results. While the DESeq2 tutorial provides <a href="http://bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.html#exploring-and-exporting-results">examples of other visualizations</a>, a common visualization to summarize DE comparisons are <a href="http://resources.qiagenbioinformatics.com/manuals/clcgenomicsworkbench/752/index.php?manual=Volcano_plots_inspecting_result_statistical_analysis.html">volcano plots</a>.</p>
 <div id="generating-volcano-plots" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Generating Volcano plots</h2>
+<h2 number="2.1"><span class="header-section-number">2.1</span> Generating Volcano plots</h2>
 <p>As described by this <a href="https://galaxyproject.github.io/training-material/topics/transcriptomics/tutorials/rna-seq-viz-with-volcanoplot/tutorial.html">Galaxy project tutorial</a>, a volcano plot is a type of scatterplot that shows statistical significance (adjusted p-value) versus magnitude of change (fold change). It allows us to quickly identify genes with large fold changes that are also statistically significant. In a volcano plot, the most upregulated genes are towards the right, the most downregulated genes are towards the left, and the most statistically significant genes are towards the top.</p>
 <p>First, we need to set thresholds for determining significant genes. A reasonable threshold would be a fold-change of less than -1.5 or greater than 1.5 and an adjusted pvalue less than 0.05.</p>
 <pre class="r"><code>fc &lt;- 1.5
@@ -604,10 +604,10 @@ dev.off()</code></pre>
 </div>
 </div>
 <div id="how-to-annotate-the-results-table" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> How to annotate the results table</h1>
+<h1 number="3"><span class="header-section-number">3</span> How to annotate the results table</h1>
 <p>It can be useful to annotate our results table with additional information to make them easier to interpret, such as adding additional gene information or better summarizing our DE results.</p>
 <div id="summarizing-our-de-results" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Summarizing our DE results</h2>
+<h2 number="3.1"><span class="header-section-number">3.1</span> Summarizing our DE results</h2>
 <p>To generate a general summary of the DE results, we can use the <code>summary</code> function to generate a basic summary by DESeq2.</p>
 <p>However, we can also use conditional statements to determine the number of genes that pass our thresholds for each comparison, which might be more informative.</p>
 <p><em>[Question]: How would we identify the number of genes with adjusted p-values &lt; 0.05 and a fold-change above 1.5 (or below -1.5)?</em></p>
@@ -618,10 +618,10 @@ sum(res_WT$padj &lt; 0.05 &amp; abs(res_WT$log2FoldChange) &gt;= log2(1.5), na.r
 <pre><code>## [1] 1151</code></pre>
 <p>How do the number of DE genes compare to what we observed from the PCA plots?</p>
 <div id="choosing-thresholds" class="section level4" number="3.1.0.1">
-<h4><span class="header-section-number">3.1.0.1</span> Choosing thresholds</h4>
+<h4 number="3.1.0.1"><span class="header-section-number">3.1.0.1</span> Choosing thresholds</h4>
 <p>Thresholding on adjusted p-values &lt; 0.05 is a standard threshold, but depending on the research question and/or how the results will be used, other thresholds might be reasonable.</p>
 <div id="exercise" class="section level5" number="3.1.0.1.1">
-<h5><span class="header-section-number">3.1.0.1.1</span> Exercise</h5>
+<h5 number="3.1.0.1.1"><span class="header-section-number">3.1.0.1.1</span> Exercise</h5>
 <p>How would we count the number of genes with a more stringent significance threshold (i.e. <code>padj</code> &lt; 0.01), ignoring fold-change? How many DE genes would we have with these thresholds?</p>
 details&gt;
 <summary>
@@ -634,7 +634,7 @@ details&gt;
 </div>
 </div>
 <div id="subsetting-significant-genes" class="section level4" number="3.1.0.2">
-<h4><span class="header-section-number">3.1.0.2</span> Subsetting significant genes</h4>
+<h4 number="3.1.0.2"><span class="header-section-number">3.1.0.2</span> Subsetting significant genes</h4>
 <details>
 <summary>
 <em>Click for code to generate a table of only DE genes</em>
@@ -659,11 +659,11 @@ res_WT_DE &lt;- res_WT_DE[order(-res_WT_DE$Call),]</code></pre>
 </div>
 </div>
 <div id="adding-genome-annotations" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Adding genome annotations</h2>
+<h2 number="3.2"><span class="header-section-number">3.2</span> Adding genome annotations</h2>
 <p>Bioconductor provides many tools and resources to facilitate access to <a href="http://bioconductor.org/packages/devel/workflows/vignettes/annotation/inst/doc/Annotation_Resources.html">genomic annotation resources</a>.</p>
 <p>We can access additional genomic annotations using the <a href="https://bioconductor.org/packages/release/bioc/html/biomaRt.html"><code>bioMart</code> package</a>. To identify we’ll structure our ‘query’ or search of the bioMart resources to use the <a href="https://m.ensembl.org/info/genome/genebuild/gene_names.html">ENSEMBL id</a> from our alignment to add the gene symbols and gene description for each gene.</p>
 <div id="gene-symbols-versus-gene-ids" class="section level3" number="3.2.1">
-<h3><span class="header-section-number">3.2.1</span> Gene symbols versus Gene IDs</h3>
+<h3 number="3.2.1"><span class="header-section-number">3.2.1</span> Gene symbols versus Gene IDs</h3>
 <p>Since UCSC and ENSEMBL are two difference reference builds, not all genes are present in both references, as outlined in <a href="https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-015-1308-8">this comprehensive review of reference genomes by Zhao &amp; Zhang</a>. Additionally, since gene symbols can change over time or be ambiguous we use and recommend using the EMSEMBL reference genome and ENSEMBL ids for alignments.</p>
 <p>First, I’ll show you key parts of a BioMart query before you try to</p>
 <p>To start, we will first load the biomaRt library &amp; choose what reference we want to access. For a more detailed walk through of using biomaRt, <a href="https://bioinformatics-core-shared-training.github.io/cruk-summer-school-2019/RNAseq/html/05_Annotation_and_Visualisation.html">this training module</a> might be useful, including what to do when annotations are not 1:1 mappings.</p>
@@ -671,23 +671,31 @@ res_WT_DE &lt;- res_WT_DE[order(-res_WT_DE$Call),]</code></pre>
 
 # using an archived host since my R/Bioconductor versions are out of date
 listMarts()</code></pre>
+<pre><code>## Ensembl site unresponsive, trying uswest mirror</code></pre>
 <pre><code>##                biomart                version
 ## 1 ENSEMBL_MART_ENSEMBL      Ensembl Genes 104
 ## 2   ENSEMBL_MART_MOUSE      Mouse strains 104
 ## 3     ENSEMBL_MART_SNP  Ensembl Variation 104
 ## 4 ENSEMBL_MART_FUNCGEN Ensembl Regulation 104</code></pre>
 <pre class="r"><code># choose ensembl database since have ENSEMBl gene ids, using
-ensembl &lt;- useMart(&quot;ENSEMBL_MART_ENSEMBL&quot;)
-
-# search for mouse
+ensembl &lt;- useMart(&quot;ENSEMBL_MART_ENSEMBL&quot;)</code></pre>
+<pre><code>## Ensembl site unresponsive, trying useast mirror</code></pre>
+<pre class="r"><code># search for mouse
 searchDatasets(mart = ensembl, pattern = &quot;mus&quot;)</code></pre>
-<pre><code>##                       dataset                                   description            version
-## 18     bmusculus_gene_ensembl                Blue whale genes (mBalMus1.v2)        mBalMus1.v2
-## 103 mmoschiferus_gene_ensembl Siberian musk deer genes (MosMos_v2_BIUU_UCD) MosMos_v2_BIUU_UCD
-## 107    mmusculus_gene_ensembl                          Mouse genes (GRCm39)             GRCm39
-## 157       psimus_gene_ensembl       Greater bamboo lemur genes (Prosim_1.0)         Prosim_1.0
-## 181     smaximus_gene_ensembl                   Turbot genes (ASM1334776v1)       ASM1334776v1
-## 196   umaritimus_gene_ensembl                 Polar bear genes (UrsMar_1.0)         UrsMar_1.0</code></pre>
+<pre><code>##                       dataset
+## 18     bmusculus_gene_ensembl
+## 103 mmoschiferus_gene_ensembl
+## 107    mmusculus_gene_ensembl
+## 157       psimus_gene_ensembl
+## 181     smaximus_gene_ensembl
+## 196   umaritimus_gene_ensembl
+##                                       description            version
+## 18                 Blue whale genes (mBalMus1.v2)        mBalMus1.v2
+## 103 Siberian musk deer genes (MosMos_v2_BIUU_UCD) MosMos_v2_BIUU_UCD
+## 107                          Mouse genes (GRCm39)             GRCm39
+## 157       Greater bamboo lemur genes (Prosim_1.0)         Prosim_1.0
+## 181                   Turbot genes (ASM1334776v1)       ASM1334776v1
+## 196                 Polar bear genes (UrsMar_1.0)         UrsMar_1.0</code></pre>
 <p><em>Note that this process takes some time and will take up a larger amount of working memory so proceed with caution if you try to run these commands on a laptop with less than 4G of memory</em></p>
 <pre class="r"><code># redefine ensembl with species specific database
 ensembl &lt;- useDataset(&quot;mmusculus_gene_ensembl&quot;, mart=ensembl)</code></pre>
@@ -697,7 +705,7 @@ head(listAttributes(ensembl), n = 30)</code></pre>
 </div>
 </div>
 <div id="breakout-exercise-2-build-a-biomart-query-and-annotate-the-de-results" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> [Breakout Exercise 2]: Build a BioMart query and annotate the DE results</h2>
+<h2 number="3.3"><span class="header-section-number">3.3</span> [Breakout Exercise 2]: Build a BioMart query and annotate the DE results</h2>
 <p>Next,<a href="https://bioconductor.org/packages/release/bioc/vignettes/biomaRt/inst/doc/accessing_ensembl.html#how-to-build-a-biomart-query">build your query</a> (using the linked help page) to:</p>
 <ol style="list-style-type: decimal">
 <li>Retrieve the information (aka: attributes) we want to add to our DE results table (e.g. <code>ensembl_gene_id</code>, <code>external_gene_name</code>)…<br />
@@ -718,8 +726,12 @@ head(listAttributes(ensembl), n = 30)</code></pre>
 GeneKey &lt;- getBM(attributes=c(&#39;ensembl_gene_id&#39;, &#39;external_gene_name&#39;),
       filters = &#39;ensembl_gene_id&#39;,
       values = row.names(assay(dds)),
-      mart = ensembl) # will take some time to run
-## check the key
+      mart = ensembl) # will take some time to run</code></pre>
+<pre><code>## Batch submitting query [====&gt;--------------------] 20% eta: 40s Batch
+## submitting query [=========&gt;---------------] 40% eta: 26s Batch submitting
+## query [==============&gt;----------] 60% eta: 12s Batch submitting query
+## [===================&gt;-----] 80% eta: 7s</code></pre>
+<pre class="r"><code>## check the key
 head(GeneKey)</code></pre>
 <pre><code>##      ensembl_gene_id external_gene_name
 ## 1 ENSMUSG00000000001              Gnai3
@@ -741,20 +753,20 @@ head(GeneKey)</code></pre>
   relocate(c(&quot;genes&quot;, &quot;external_gene_name&quot;)) # optionally, re-order columns to make output more readable
 
 head(res_WT_anno)</code></pre>
-<pre><code>##                genes external_gene_name    baseMean log2FoldChange      lfcSE        stat       pvalue
-## 1 ENSMUSG00000000001              Gnai3 6255.632164   -0.014024321 0.09301588 -0.15077341 0.8801544640
-## 2 ENSMUSG00000000028              Cdc45 1337.874474    0.522421732 0.13599465  3.84148730 0.0001222911
-## 3 ENSMUSG00000000031                H19    3.773571   -1.156597290 1.60080258 -0.72251088 0.4699804359
-## 4 ENSMUSG00000000037              Scml2   27.563275   -0.279611867 0.47655119 -0.58674046 0.5573780290
-## 5 ENSMUSG00000000049               Apoh    2.256350    4.010718329 1.88912289  2.12305846 0.0337489531
-## 6 ENSMUSG00000000056               Narf 2194.251314   -0.008544091 0.17722204 -0.04821122 0.9615479086
-##          padj
-## 1 0.960702559
-## 2 0.003948693
-## 3          NA
-## 4 0.804647138
-## 5          NA
-## 6 0.987888734</code></pre>
+<pre><code>##                genes external_gene_name    baseMean log2FoldChange
+## 1 ENSMUSG00000000001              Gnai3 6255.632164   -0.014024321
+## 2 ENSMUSG00000000028              Cdc45 1337.874474    0.522421732
+## 3 ENSMUSG00000000031                H19    3.773571   -1.156597290
+## 4 ENSMUSG00000000037              Scml2   27.563275   -0.279611867
+## 5 ENSMUSG00000000049               Apoh    2.256350    4.010718329
+## 6 ENSMUSG00000000056               Narf 2194.251314   -0.008544091
+##        lfcSE        stat       pvalue        padj
+## 1 0.09301588 -0.15077341 0.8801544640 0.960702559
+## 2 0.13599465  3.84148730 0.0001222911 0.003948693
+## 3 1.60080258 -0.72251088 0.4699804359          NA
+## 4 0.47655119 -0.58674046 0.5573780290 0.804647138
+## 5 1.88912289  2.12305846 0.0337489531          NA
+## 6 0.17722204 -0.04821122 0.9615479086 0.987888734</code></pre>
 <p>Alternatively, if you are more familiar with base functions:</p>
 <pre class="r"><code>res_WT_anno &lt;- res_WT # copy table
 res_WT_anno &lt;- cbind(genes=row.names(res_WT_anno), res_WT_anno[ ,c(1:6)])
@@ -764,30 +776,30 @@ res_WT_anno &lt;- as.data.frame(res_WT_anno)
 res_WT_anno &lt;- merge(GeneKey, res_WT_anno, by.x = &quot;ensembl_gene_id&quot;, by.y=&quot;genes&quot;, all.x = FALSE, all.y = TRUE)
 
 head(res_WT_anno)</code></pre>
-<pre><code>##      ensembl_gene_id external_gene_name    baseMean log2FoldChange      lfcSE        stat       pvalue
-## 1 ENSMUSG00000000001              Gnai3 6255.632164   -0.014024321 0.09301588 -0.15077341 0.8801544640
-## 2 ENSMUSG00000000028              Cdc45 1337.874474    0.522421732 0.13599465  3.84148730 0.0001222911
-## 3 ENSMUSG00000000031                H19    3.773571   -1.156597290 1.60080258 -0.72251088 0.4699804359
-## 4 ENSMUSG00000000037              Scml2   27.563275   -0.279611867 0.47655119 -0.58674046 0.5573780290
-## 5 ENSMUSG00000000049               Apoh    2.256350    4.010718329 1.88912289  2.12305846 0.0337489531
-## 6 ENSMUSG00000000056               Narf 2194.251314   -0.008544091 0.17722204 -0.04821122 0.9615479086
-##          padj
-## 1 0.960702559
-## 2 0.003948693
-## 3          NA
-## 4 0.804647138
-## 5          NA
-## 6 0.987888734</code></pre>
+<pre><code>##      ensembl_gene_id external_gene_name    baseMean log2FoldChange
+## 1 ENSMUSG00000000001              Gnai3 6255.632164   -0.014024321
+## 2 ENSMUSG00000000028              Cdc45 1337.874474    0.522421732
+## 3 ENSMUSG00000000031                H19    3.773571   -1.156597290
+## 4 ENSMUSG00000000037              Scml2   27.563275   -0.279611867
+## 5 ENSMUSG00000000049               Apoh    2.256350    4.010718329
+## 6 ENSMUSG00000000056               Narf 2194.251314   -0.008544091
+##        lfcSE        stat       pvalue        padj
+## 1 0.09301588 -0.15077341 0.8801544640 0.960702559
+## 2 0.13599465  3.84148730 0.0001222911 0.003948693
+## 3 1.60080258 -0.72251088 0.4699804359          NA
+## 4 0.47655119 -0.58674046 0.5573780290 0.804647138
+## 5 1.88912289  2.12305846 0.0337489531          NA
+## 6 0.17722204 -0.04821122 0.9615479086 0.987888734</code></pre>
 <p>Notice that not all genes were annotated with an ENSEMBl gene id or gene description. While we are able to annotate our results, we should be very cautious as the gene symbol is not a good unique identifier plus we did not use a UCSC annotation resource so the HUGO gene symbol may not always match. However, this code is similar to the steps needed to annotate ENSEMBL id based results, like what would have been generated from yesterday’s alignments, with more interpretable gene symbols.</p>
 </details>
 <p><strong>Note</strong>: For additional information regarding bioMart, please consult the <a href="https://bioconductor.org/packages/release/bioc/vignettes/biomaRt/inst/doc/accessing_ensembl.html">ENSEMBL bioMart vignette</a> or the broader <a href="http://bioconductor.org/packages/devel/workflows/vignettes/annotation/inst/doc/Annotation_Resources.html">Bioconductor Annotation Resources vignette</a>.</p>
 </div>
 </div>
 <div id="outputting-results-to-file" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Outputting results to file</h1>
+<h1 number="4"><span class="header-section-number">4</span> Outputting results to file</h1>
 <p>A key aspect of our analysis is preserving the relevant datasets for both our records and for downstream applications, such as functional enrichments.</p>
 <div id="count-tables" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> Count tables</h2>
+<h2 number="4.1"><span class="header-section-number">4.1</span> Count tables</h2>
 <p>The most relevant count tables are the raw, filtered count table that we used as the input for our analysis and the rlog normalized count table that we used for our quality control visualizations.</p>
 <p>First, we’ll setup a new directory for our output tables.</p>
 <pre class="r"><code>dir.create(&quot;tables&quot;, showWarnings = FALSE)</code></pre>
@@ -797,7 +809,7 @@ head(res_WT_anno)</code></pre>
 <pre class="r"><code>write.csv(assay(rld), file=&quot;tables/DESeq2_rlogNormalized_counts.csv&quot;)</code></pre>
 </div>
 <div id="de-results-table" class="section level2" number="4.2">
-<h2><span class="header-section-number">4.2</span> DE results table</h2>
+<h2 number="4.2"><span class="header-section-number">4.2</span> DE results table</h2>
 <p>Next we’ll write out our DE results for the KD comparison to file, since we added additional information to that table.</p>
 <pre class="r"><code>write.csv(res_WT_anno,
           row.names = FALSE,
@@ -811,7 +823,7 @@ head(res_WT_anno)</code></pre>
 </div>
 </div>
 <div id="summary" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> Summary</h1>
+<h1 number="5"><span class="header-section-number">5</span> Summary</h1>
 <p>In this section, we:</p>
 <ul>
 <li>Generated a volcano plot for our differential expression results<br />
@@ -826,7 +838,7 @@ head(res_WT_anno)</code></pre>
 </ul>
 </div>
 <div id="key-takeaways" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> Key takeaways</h1>
+<h1 number="6"><span class="header-section-number">6</span> Key takeaways</h1>
 <p>Overall, we’ve run through most of the building blocks needed to run a differential expression analysis and hopefully built up a better understanding of how differential expression comparisons work, particularly how experimental design can impact our results.</p>
 <p>What to consider moving forward:</p>
 <ul>
@@ -847,7 +859,7 @@ head(res_WT_anno)</code></pre>
 <hr />
 </div>
 <div id="extension---what-can-we-do-with-our-de-results" class="section level1" number="7">
-<h1><span class="header-section-number">7</span> Extension - what can we do with our DE results?</h1>
+<h1 number="7"><span class="header-section-number">7</span> Extension - what can we do with our DE results?</h1>
 <p>Now that we have our DE results, have we address the biological question relevant to the authors of the <a href="http://www.ncbi.nlm.nih.gov/pubmed/25464849">original paper</a>? On the one hand, yes - we now have two tables of genes that are impacted by change in Mov10 expression. But with two lists of genes alone, it can be difficult to find patterns or understand broader biological impacts.</p>
 <p>What if we wanted to find out what genes were signifant in <em>both</em> comparisons? The <code>intersect</code> function, such as implimented as <a href="https://www.datasciencemadesimple.com/intersect-function-r-using-dplyr-intersection-data-frames/">part of the dplyr package</a> would be useful to identify shared significant genes. A <a href="https://www.r-graph-gallery.com/14-venn-diagramm.html">venn diagram</a> could be a way to visualize these overlaps.</p>
 <p>A way to determine possible <a href="https://www.ebi.ac.uk/training-beta/online/courses/functional-genomics-ii-common-technologies-and-data-analysis-methods/biological-interpretation-of-gene-expression-data-2/">broader biological interpretations</a> from the observed DE results, is functional enrichments. There are many options, such as some included in this <a href="https://www.researchgate.net/post/How_can_I_analyze_a_set_of_DEGs_differentially_expressed_genes_to_obtain_information_from_them">discussion thread</a>. Other common functional enrichments approaches are gene set enrichment analysis, aka <a href="http://software.broadinstitute.org/gsea/index.jsp">GSEA</a>, Database for Annotation, Visualization and Integrated Discovery, aka <a href="https://david.ncifcrf.gov/">DAVID</a>, <a href="https://digitalinsights.qiagen.com/">Ingenity</a>, and [iPathway Guide]</p>
@@ -855,7 +867,7 @@ head(res_WT_anno)</code></pre>
 <hr />
 </div>
 <div id="sources-used" class="section level1" number="8">
-<h1><span class="header-section-number">8</span> Sources Used</h1>
+<h1 number="8"><span class="header-section-number">8</span> Sources Used</h1>
 <ul>
 <li>HBC DGE training module, part 1: <a href="https://hbctraining.github.io/DGE_workshop/lessons/04_DGE_DESeq2_analysis.html" class="uri">https://hbctraining.github.io/DGE_workshop/lessons/04_DGE_DESeq2_analysis.html</a><br />
 </li>
@@ -869,7 +881,7 @@ head(res_WT_anno)</code></pre>
 </ul>
 </div>
 <div id="additional-resources" class="section level1" number="9">
-<h1><span class="header-section-number">9</span> Additional Resources</h1>
+<h1 number="9"><span class="header-section-number">9</span> Additional Resources</h1>
 <ul>
 <li>MIDAS Reproduciblity Hub: <a href="https://midas.umich.edu/reproducibility-overview/" class="uri">https://midas.umich.edu/reproducibility-overview/</a></li>
 <li>ARC resources: <a href="https://arc-ts.umich.edu/" class="uri">https://arc-ts.umich.edu/</a></li>
@@ -882,52 +894,62 @@ head(res_WT_anno)</code></pre>
 <hr />
 </div>
 <div id="session-info" class="section level1" number="10">
-<h1><span class="header-section-number">10</span> Session Info</h1>
+<h1 number="10"><span class="header-section-number">10</span> Session Info</h1>
 <pre class="r"><code>sessionInfo()</code></pre>
-<pre><code>## R version 4.1.1 (2021-08-10)
+<pre><code>## R version 4.1.2 (2021-11-01)
 ## Platform: x86_64-apple-darwin17.0 (64-bit)
-## Running under: macOS Catalina 10.15.7
+## Running under: macOS Monterey 12.0.1
 ## 
 ## Matrix products: default
-## BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
 ## LAPACK: /Library/Frameworks/R.framework/Versions/4.1/Resources/lib/libRlapack.dylib
 ## 
 ## locale:
 ## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
 ## 
 ## attached base packages:
-## [1] stats4    stats     graphics  grDevices utils     datasets  methods   base     
+## [1] stats4    stats     graphics  grDevices utils     datasets  methods  
+## [8] base     
 ## 
 ## other attached packages:
-##  [1] biomaRt_2.50.0              data.table_1.14.2           RColorBrewer_1.1-2         
-##  [4] pheatmap_1.0.12             ggrepel_0.9.1               dplyr_1.0.7                
-##  [7] tidyr_1.1.4                 ggplot2_3.3.5               DESeq2_1.34.0              
-## [10] SummarizedExperiment_1.24.0 Biobase_2.54.0              MatrixGenerics_1.6.0       
-## [13] matrixStats_0.61.0          GenomicRanges_1.46.0        GenomeInfoDb_1.30.0        
-## [16] IRanges_2.28.0              S4Vectors_0.32.2            BiocGenerics_0.40.0        
+##  [1] biomaRt_2.50.0              data.table_1.14.2          
+##  [3] RColorBrewer_1.1-2          pheatmap_1.0.12            
+##  [5] ggrepel_0.9.1               dplyr_1.0.7                
+##  [7] tidyr_1.1.4                 ggplot2_3.3.5              
+##  [9] DESeq2_1.34.0               SummarizedExperiment_1.24.0
+## [11] Biobase_2.30.0              MatrixGenerics_1.6.0       
+## [13] matrixStats_0.61.0          GenomicRanges_1.46.0       
+## [15] GenomeInfoDb_1.30.0         IRanges_2.28.0             
+## [17] S4Vectors_0.32.2            BiocGenerics_0.40.0        
 ## [19] rmarkdown_2.11             
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] bitops_1.0-7           bit64_4.0.5            filelock_1.0.2         progress_1.2.2        
-##  [5] httr_1.4.2             tools_4.1.1            utf8_1.2.2             R6_2.5.1              
-##  [9] DBI_1.1.1              colorspace_2.0-2       withr_2.4.2            tidyselect_1.1.1      
-## [13] prettyunits_1.1.1      bit_4.0.4              curl_4.3.2             compiler_4.1.1        
-## [17] xml2_1.3.2             DelayedArray_0.20.0    labeling_0.4.2         scales_1.1.1          
-## [21] genefilter_1.76.0      rappdirs_0.3.3         stringr_1.4.0          digest_0.6.28         
-## [25] XVector_0.34.0         pkgconfig_2.0.3        htmltools_0.5.2        dbplyr_2.1.1          
-## [29] fastmap_1.1.0          highr_0.9              rlang_0.4.11           RSQLite_2.2.8         
-## [33] jquerylib_0.1.4        generics_0.1.0         farver_2.1.0           BiocParallel_1.28.0   
-## [37] RCurl_1.98-1.5         magrittr_2.0.1         GenomeInfoDbData_1.2.7 Matrix_1.3-4          
-## [41] Rcpp_1.0.7             munsell_0.5.0          fansi_0.5.0            lifecycle_1.0.1       
-## [45] stringi_1.7.5          yaml_2.2.1             zlibbioc_1.40.0        BiocFileCache_2.2.0   
-## [49] grid_4.1.1             blob_1.2.2             parallel_4.1.1         crayon_1.4.1          
-## [53] lattice_0.20-44        Biostrings_2.62.0      splines_4.1.1          annotate_1.72.0       
-## [57] hms_1.1.1              KEGGREST_1.34.0        locfit_1.5-9.4         knitr_1.36            
-## [61] pillar_1.6.3           geneplotter_1.72.0     XML_3.99-0.8           glue_1.4.2            
-## [65] evaluate_0.14          png_0.1-7              vctrs_0.3.8            gtable_0.3.0          
-## [69] purrr_0.3.4            assertthat_0.2.1       cachem_1.0.6           xfun_0.26             
-## [73] xtable_1.8-4           survival_3.2-11        tibble_3.1.5           AnnotationDbi_1.56.2  
-## [77] memoise_2.0.0          ellipsis_0.3.2</code></pre>
+##  [1] bitops_1.0-7           bit64_4.0.5            filelock_1.0.2        
+##  [4] progress_1.2.2         httr_1.4.2             tools_4.1.2           
+##  [7] bslib_0.3.1            utf8_1.2.2             R6_2.5.1              
+## [10] DBI_1.1.1              colorspace_2.0-2       withr_2.4.2           
+## [13] tidyselect_1.1.1       prettyunits_1.1.1      bit_4.0.4             
+## [16] curl_4.3.2             compiler_4.1.2         cli_3.1.0             
+## [19] xml2_1.3.2             DelayedArray_0.20.0    labeling_0.4.2        
+## [22] sass_0.4.0             scales_1.1.1           genefilter_1.76.0     
+## [25] rappdirs_0.3.3         stringr_1.4.0          digest_0.6.28         
+## [28] XVector_0.34.0         pkgconfig_2.0.3        htmltools_0.5.2       
+## [31] dbplyr_2.1.1           fastmap_1.1.0          highr_0.9             
+## [34] rlang_0.4.12           rstudioapi_0.13        RSQLite_2.2.8         
+## [37] jquerylib_0.1.4        generics_0.1.1         farver_2.1.0          
+## [40] jsonlite_1.7.2         BiocParallel_1.28.0    RCurl_1.98-1.5        
+## [43] magrittr_2.0.1         GenomeInfoDbData_1.2.7 Matrix_1.3-4          
+## [46] Rcpp_1.0.7             munsell_0.5.0          fansi_0.5.0           
+## [49] lifecycle_1.0.1        stringi_1.7.5          yaml_2.2.1            
+## [52] zlibbioc_1.16.0        BiocFileCache_2.2.0    grid_4.1.2            
+## [55] blob_1.2.2             parallel_4.1.2         crayon_1.4.2          
+## [58] lattice_0.20-45        splines_4.1.2          annotate_1.48.0       
+## [61] hms_1.1.1              locfit_1.5-9.4         knitr_1.36            
+## [64] pillar_1.6.4           geneplotter_1.72.0     XML_3.99-0.8          
+## [67] glue_1.4.2             evaluate_0.14          vctrs_0.3.8           
+## [70] gtable_0.3.0           purrr_0.3.4            assertthat_0.2.1      
+## [73] cachem_1.0.6           xfun_0.27              xtable_1.8-4          
+## [76] survival_3.2-13        tibble_3.1.5           AnnotationDbi_1.32.3  
+## [79] memoise_2.0.0          ellipsis_0.3.2</code></pre>
 <hr />
 <p>These materials have been adapted and extended from materials listed above. These are open access materials distributed under the terms of the <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license (CC BY 4.0)</a>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</p>
 </div>
