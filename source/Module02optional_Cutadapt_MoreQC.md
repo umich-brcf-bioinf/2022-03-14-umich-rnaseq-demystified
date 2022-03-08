@@ -29,7 +29,7 @@ In this module we will learn:
 
 * about the cutadapt software and its uses
 * how to use the cutadapt tool for trimming adapters
-* how to trim all of our samples in a for-loop
+* how to trim all of our samples using a bash variable
 
 # Differential Expression Workflow
 
@@ -88,32 +88,17 @@ cutadapt -a AGATCGGAAGAG -A AGATCGGAAGAG -o out_trimmed/sample_01_R1.trimmed.fas
 
 At this point, we've run cutadapt on one of our samples. We could construct a series of similar commands by altering the sample names. However, there's an easier way. For this, we'll use a bash variable.
 
-## Bash Variable Exercise
-
-1. Use a bash variable to echo "Hello, World!"
-2. Use a bash variable to echo "Hello, <Your Name>!"
-
-```
-noun=World
-echo "Hello, $noun!"
-noun=Travis
-echo "Hello, $noun!"
-```
-
-Now that we've learned the basics of bash variables and of running Cutadapt, let's try an exercise
+<br>
+<br>
 
 ## Cutadapt All Samples Exercise (Breakout)
 
-1. View the help page, and construct a cutadapt command with a bash variable in it
-2. Use variable reassignment along with our command to trim all samples
+Before starting our breakout exercise, we should make sure that we are on the same page. Follow the link below:
 
-<details>
-<summary>Running cutadapt on all samples using a bash variable</summary>
+[Link to Cutadapt breakout exercise](Module02b_breakout01_ex.html)
 
-[Here](https://gist.github.com/twsaari/aaa43ae3ad45ad4cb2f28f2268e71148) is an example of using a bash variable to run cutadapt on all of our samples.
-
-</details>
-
+<br>
+<br>
 
 Now that we've run cutadapt and trimmed the adapters from our reads, we will quickly re-run FastQC on these trimmed read FASTQs. This will confirm that we've successfully trimmed the adapters, and we'll see that our FASTQ files are ready for sequencing. Since we've discussed the FastQC input/output and functionality in the previous module, we'll go next to an exercise re-running FastQC on the trimmed read data
 
@@ -132,21 +117,11 @@ fastqc -o out_fastqc_trimmed out_trimmed/*.fastq.gz
 ls -l out_fastqc_trimmed
 ```
 
-<details>
-<summary>Optional exercise - Transfer a FastQC report to personal computer</summary>
-
-Make sure you're running scp on your **local** computer, requesting a file from the **remote** computer we were just using.
-
-scp command format, with the address for AWS remote
-
-```
-# Usage: scp [source] [destination]
-scp <username>@bfx-workshop01.med.umich.edu:~/analysis/out_fastqc_trimmed/sample_01_R1.trimmed_fastqc.html ~/rsd-workshop/
-```
-
-</details>
+<br>
 
 Opening the HTML report, we see it is organized by the same modules and each plot has all samples for which FastQC was run. We can see the report confirms that the adapters have been trimmed from our sequence.
+
+<br>
 
 ---
 

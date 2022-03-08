@@ -186,12 +186,17 @@ mkdir out_rsem
 # Construct an RSEM command to align sample_01 to our reference
 rsem-calculate-expression --star --num-threads 1 --star-gzipped-read-file --star-output-genome-bam --keep-intermediate-files --paired-end out_trimmed/sample_01_R1.trimmed.fastq.gz out_trimmed/sample_01_R2.trimmed.fastq.gz ../data/refs/GRCh38.98.chr22reduced out_rsem/sample_01
 ```
+<br>
+<br>
 
 ## Aligning All Samples Exercise (Breakout):
 
-1. Use RSEM+STAR command above, to construct the appropriate commands to run `rsem-calculate-expression` on each of our samples. Try using a variable.
-2. View the output, and verify that we have the files we need.
+Before starting our breakout exercise, we should make sure that we are on the same page. Follow the link below:
 
+[Link to alignment breakout exercise](Module04_breakout02_ex.html)
+
+<br>
+<br>
 
 ---
 

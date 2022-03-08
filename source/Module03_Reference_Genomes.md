@@ -167,6 +167,9 @@ The key is to be consistent in your research. Switching from ENSEMBL to UCSC wil
 
 Another important note is not to mix the sources. If you download reference sequence from UCSC, don't use an ENSEMBL GTF (and vice versa). One of the quirky differences between the two databases is that ENSEMBL refers to chromosome only by their number, i.e. `1`, whereas UCSC refers to chromsomes as `chr1`. This makes reference FASTAs from one source incompatible with gene builds from another.
 
+<br>
+<br>
+
 ---
 
 These materials have been adapted and extended from materials created by the [Harvard Chan Bioinformatics Core (HBC)](http://bioinformatics.sph.harvard.edu/). These are open access materials distributed under the terms of the [Creative Commons Attribution license (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.

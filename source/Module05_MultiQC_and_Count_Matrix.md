@@ -141,40 +141,24 @@ multiqc --outdir out_multiqc_rsem out_rsem/
 
 We just learned how to view all of our alignment results in one report with the help of MultiQC. MultiQC is also useful because it can utilize multiple separate modules to create summary figures of different steps in our pipeline.
 
-What would happen if we pointed multiQC at our trimmed read directory? What about if we point it to the entire analysis directory?
-
-## MultiQC Multiple Module Exercise (Breakout)
-
-1. Construct and run a MultiQC command to view the trimmed read results
-2. Construct and run a MultiQC command to view both the trimmed read and aligned read results
-3. (Optional) - Use scp to transfer a report from the AWS machine to your personal computer
-
-<details>
-<summary>MultiQC with Different Modules</summary>
+What would happen if we pointed multiQC at our trimmed FastQC directory? What about if we point it to the entire analysis directory? Let's try it out and see:
 
 ```
 # A MultiQC command to analyze the trimmed read results
 multiqc --outdir out_multiqc_cutadapt out_fastqc_trimmed/
-# A multiQC command for both trimmed and aligned read summary statistics
+# A multiQC command for a report of the entire project
 multiqc --outdir out_multiqc_all  .
 ```
 
-</details>
+## Transfer MultiQC Reports With `scp` Exercise (Breakout)
 
-<details>
-<summary>Optional exercise - Transfer a MultiQC report to personal computer</summary>
+Before starting our breakout exercise, we should make sure that we are on the same page. Follow the link below:
 
-Make sure you're running scp on your **local** computer, requesting a file from the **remote** computer we were just using.
+[Link to report transfer breakout exercise](Module05a_breakout03_ex.html)
 
-scp command format, with the address for AWS remote
 
-```
-# Usage: scp [source] [destination]
-scp <username>@bfx-workshop01.med.umich.edu:~/example_data/out_multiqc_all/multiqc_report.html ~/rsd-workshop/multiqc_report_all.html
-```
-
-</details>
-
+<br>
+<br>
 
 ## Creating the count matrix
 
@@ -215,6 +199,9 @@ combine.py --input_path "out_rsem/*.genes.results" --output_file combined_counts
 # View the resulting count matrix
 less combined_counts.txt
 ```
+
+<br>
+<br>
 
 ---
 
