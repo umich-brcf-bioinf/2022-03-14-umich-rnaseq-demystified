@@ -82,7 +82,7 @@ mkdir out_trimmed
 cutadapt --help
 
 # Construct a cutadapt command to trim adapters from paired-end reads
-cutadapt -a AGATCGGAAGAG -A AGATCGGAAGAG -o out_trimmed/sample_01_R1.trimmed.fastq.gz -p out_trimmed/sample_01_R2.trimmed.fastq.gz ../data/reads/sample_01_R1.fastq.gz ../data/reads/sample_01_R2.fastq.gz
+cutadapt -a AGATCGGAAGAG -A AGATCGGAAGAG -o out_trimmed/sample_01_R1.trimmed.fastq.gz -p out_trimmed/sample_01_R2.trimmed.fastq.gz ../reads/sample_01_R1.fastq.gz ../reads/sample_01_R2.fastq.gz
 # View the output of cutadapt, (verify presence of output files and peek into the files)
 ```
 

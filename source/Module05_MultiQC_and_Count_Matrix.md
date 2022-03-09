@@ -130,7 +130,7 @@ Source: [MultiQC example report](https://multiqc.info/examples/rna-seq/multiqc_r
 
 ```
 # Ensure that we're in our analysis directory, note the contents
-cd ~/analysis
+cd ~/RSD_Shell/analysis
 ls -l
 # View MultiQC help page
 multiqc --help

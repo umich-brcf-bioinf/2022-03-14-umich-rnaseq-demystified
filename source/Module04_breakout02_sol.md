@@ -33,7 +33,7 @@ One solution is to define a bash variable for the sample, use that variable in t
     rsem-calculate-expression --star --num-threads 1 --star-gzipped-read-file \
     --star-output-genome-bam --keep-intermediate-files \
     --paired-end out_trimmed/${SAMPLE}_R1.trimmed.fastq.gz out_trimmed/${SAMPLE}_R2.trimmed.fastq.gz \
-    ../data/refs/GRCh38.98.chr22reduced \
+    ../refs/GRCh38.98.chr22reduced \
     out_rsem/${SAMPLE}
     SAMPLE=sample_03
     # Use the up arrow key to repeat the same command as above with the variable reassigned to sample_03
@@ -49,7 +49,7 @@ Another solution is to create a for-loop with our bash variable and alignment co
         rsem-calculate-expression --star --num-threads 1 --star-gzipped-read-file \
         --star-output-genome-bam --keep-intermediate-files \
         --paired-end out_trimmed/${SAMPLE}_R1.trimmed.fastq.gz out_trimmed/${SAMPLE}_R2.trimmed.fastq.gz \
-        ../data/refs/GRCh38.98.chr22reduced \
+        ../refs/GRCh38.98.chr22reduced \
         out_rsem/${SAMPLE}
     done
 

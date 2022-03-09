@@ -17,7 +17,7 @@ We just tried two new variations of our MultiQC command, one pointed at the dire
 <br>
 
 - Make sure that you are viewing your local terminal. The `scp` command should be run from your own machine.
-- Use `scp` to transfer a report from the AWS machine to your personal computer.
+- Use `scp` to transfer the trimmed read fastqc report and the comprehensive (all) report from the AWS machine to your personal computer.
 - Confirm that you've received the reports
 
 <br>
@@ -44,9 +44,9 @@ We just tried two new variations of our MultiQC command, one pointed at the dire
 
 ```
 # Transfer the report of trimmed read results
-scp <username>@bfx-workshop01.med.umich.edu:~/example_data/out_multiqc_cutadapt/multiqc_report.html ~/rsd-workshop/multiqc_report_trimmed.html
+scp <username>@bfx-workshop01.med.umich.edu:~/RSD_Shell/analysis/out_multiqc_cutadapt/multiqc_report.html ~/rsd-workshop/multiqc_report_trimmed.html
 # Transfer the full report
-scp <username>@bfx-workshop01.med.umich.edu:~/example_data/out_multiqc_all/multiqc_report.html ~/rsd-workshop/multiqc_report_all.html
+scp <username>@bfx-workshop01.med.umich.edu:~/RSD_Shell/analysis/out_multiqc_all/multiqc_report.html ~/rsd-workshop/multiqc_report_all.html
 ```
 
 <br>

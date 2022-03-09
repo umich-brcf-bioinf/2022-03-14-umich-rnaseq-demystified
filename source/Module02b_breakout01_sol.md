@@ -43,14 +43,14 @@ One solution is to define a bash variable for the sample, use that variable in a
     # Define a variable $SAMPLE
     SAMPLE=sample_02
     # Create a command using the variable $SAMPLE
-    cutadapt -a AGATCGGAAGAG -A AGATCGGAAGAG -o out_trimmed/${SAMPLE}_R1.trimmed.fastq.gz -p out_trimmed/${SAMPLE}_R2.trimmed.fastq.gz ../data/reads/${SAMPLE}_R1.fastq.gz ../data/reads/${SAMPLE}_R2.fastq.gz
+    cutadapt -a AGATCGGAAGAG -A AGATCGGAAGAG -o out_trimmed/${SAMPLE}_R1.trimmed.fastq.gz -p out_trimmed/${SAMPLE}_R2.trimmed.fastq.gz ../reads/${SAMPLE}_R1.fastq.gz ../reads/${SAMPLE}_R2.fastq.gz
 
     # Redefine the variable and run the command for each additional sample
     SAMPLE=sample_03
-    cutadapt -a AGATCGGAAGAG -A AGATCGGAAGAG -o out_trimmed/${SAMPLE}_R1.trimmed.fastq.gz -p out_trimmed/${SAMPLE}_R2.trimmed.fastq.gz ../data/reads/${SAMPLE}_R1.fastq.gz ../data/reads/${SAMPLE}_R2.fastq.gz
+    cutadapt -a AGATCGGAAGAG -A AGATCGGAAGAG -o out_trimmed/${SAMPLE}_R1.trimmed.fastq.gz -p out_trimmed/${SAMPLE}_R2.trimmed.fastq.gz ../reads/${SAMPLE}_R1.fastq.gz ../reads/${SAMPLE}_R2.fastq.gz
 
     SAMPLE=sample_04
-    cutadapt -a AGATCGGAAGAG -A AGATCGGAAGAG -o out_trimmed/${SAMPLE}_R1.trimmed.fastq.gz -p out_trimmed/${SAMPLE}_R2.trimmed.fastq.gz ../data/reads/${SAMPLE}_R1.fastq.gz ../data/reads/${SAMPLE}_R2.fastq.gz
+    cutadapt -a AGATCGGAAGAG -A AGATCGGAAGAG -o out_trimmed/${SAMPLE}_R1.trimmed.fastq.gz -p out_trimmed/${SAMPLE}_R2.trimmed.fastq.gz ../reads/${SAMPLE}_R1.fastq.gz ../reads/${SAMPLE}_R2.fastq.gz
 
 <br>
 
@@ -60,7 +60,7 @@ Another solution is to create a for-loop with our bash variable and Cutadapt com
         do
         cutadapt -a AGATCGGAAGAG -A AGATCGGAAGAG \
         -o out_trimmed/${SAMPLE}_R1.trimmed.fastq.gz -p out_trimmed/${SAMPLE}_R2.trimmed.fastq.gz \
-        ../data/reads/${SAMPLE}_R1.fastq.gz ../data/reads/${SAMPLE}_R2.fastq.gz
+        ../reads/${SAMPLE}_R1.fastq.gz ../reads/${SAMPLE}_R2.fastq.gz
     done
 
 <br>

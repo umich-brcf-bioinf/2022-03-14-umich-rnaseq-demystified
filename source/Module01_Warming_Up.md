@@ -119,11 +119,11 @@ ssh <username>@bfx-workshop01.med.umich.edu
 # Ensure we are in home directory
 cd
 # View our references
-ls ~/data/refs
+ls ~/RSD_Shell/refs
 # View our input fastq files
-ls ~/data/reads
+ls ~/RSD_Shell/reads
 # Create a folder for our analysis
-mkdir ~/analysis
+mkdir ~/RSD_Shell/analysis
 ```
 
 
