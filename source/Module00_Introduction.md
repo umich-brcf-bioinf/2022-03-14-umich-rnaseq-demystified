@@ -41,16 +41,21 @@ pre {
 - We are creating a series of bioinformatics-focused workshops.
 - https://brcf.medicine.umich.edu/bioinformatics
 
+
 ## About the workshop team
-| ![](images/Module00_headshots/headshot_cgates.jpg) | ![](images/Module00_headshots/headshot_mbradenb.jpg)| ![](images/Module00_headshots/headshot_trsaari.jpg) |
+| ![](images/Module00_headshots/headshot_cgates.jpg) | ![](images/Module00_headshots/headshot_mbradenb.jpg) | ![](images/Module00_headshots/headshot_trsaari.jpg) | ![](images/Module00_headshots/headshot_damki.jpg) |
+|:-:|:-:|:-:|:-:|
+| **Chris** | **Marci** | **Travis** | **Dana** |
+| | | | |
+| ![](images/Module00_headshots/headshot_mflick.jpg) | ![](images/Module00_headshots/headshot_grkenney.jpg) | ![](images/Module00_headshots/headshot_rcavalca.jpg) |
+|  **Matthew** | **Grace**| **Raymond** |
+
+### (Helpers joining Tuesday/Wednesday)
+
+| ![](images/Module00_headshots/headshot_meese.jpg) | ![](images/Module00_headshots/headshot_ncarruth.jpg) | ![](images/Module00_headshots/headshot_weishwu.jpg) |
 |:-:|:-:|:-:|
-| **Chris** | **Marci** | **Travis** |
-| | | |
-| ![](images/Module00_headshots/headshot_damki.jpg) | ![](images/Module00_headshots/headshot_rtagett.jpg) | ![](images/Module00_headshots/headshot_grkenney.jpg) | 
-|  **Dana** | **Becky** | **Grace** |
-| | | |
-| ![](images/Module00_headshots/headshot_ncarruth.jpg)| ![](images/Module00_headshots/headshot_rcavalca.jpg)| ![](images/Module00_headshots/headshot_weishwu.jpg)|
-| **Nick** | **Raymond** | **Weisheng** |
+| **Marisa** | **Nick** | **Weisheng** |
+
 <br/>
 
 ## Workshop sponsors
@@ -155,7 +160,7 @@ breakout room.
 
 ![Posting messages to Slack](images/Module00_slack.png)
 
-  - Slack messages will be posted to the **2021-november-rsd-workshop** channel.  
+  - Slack messages will be posted to the **2022-03-rnaseq-demystified-workshop** channel.  
     Click on the channel in the left pane (1) to select this channel.
   - You can type in the **message field** (2); click **send** (3) to
     post your message to everyone.

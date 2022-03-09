@@ -51,12 +51,12 @@ connect to enable gene expression analysis from bulk RNA-Seq data.
 ## Looking ahead
 
 #### Workshop environment
-- BASH/RStudio workshop compute environment will be available until next Monday.
+- BASH/RStudio workshop compute environment will be available until next Wednesday.
 - You can download files from the workshop environment from your terminal/command line window as below. 
   (You will need to substitute your actual workshop username and type workshop password when prompted.)
   ```
-  mkdir 2021-11-15-rnaseq-demystified-workshop
-  scp -r YOUR_USERNAME@bfx-workshop01.med.umich.edu:"data analysis *-umich-rnaseq-demystified" 2021-11-15-rnaseq-demystified-workshop
+  mkdir rnaseq-demystified-workshop
+  scp -r YOUR_USERNAME@bfx-workshop01.med.umich.edu:"data analysis *-umich-rnaseq-demystified" rnaseq-demystified-workshop
   ```
   - Note that the full download is about 2Gb, so depending on your internet 
     speeds it could take while.
@@ -100,18 +100,20 @@ connect to enable gene expression analysis from bulk RNA-Seq data.
 
 ![Sponsors](images/Module00_sponsor_logos.png)
 
-| ![](images/Module00_headshots/headshot_cgates.jpg) | ![](images/Module00_headshots/headshot_mbradenb.jpg)| ![](images/Module00_headshots/headshot_trsaari.jpg) |
+## About the workshop team
+| ![](images/Module00_headshots/headshot_mbradenb.jpg) | ![](images/Module00_headshots/headshot_trsaari.jpg) | ![](images/Module00_headshots/headshot_damki.jpg) |
 |:-:|:-:|:-:|
-| **Chris** | **Marci** | **Travis** |
+| **Marci** | **Travis** | **Dana** |
 | | | |
-| ![](images/Module00_headshots/headshot_damki.jpg) | ![](images/Module00_headshots/headshot_rtagett.jpg) | ![](images/Module00_headshots/headshot_grkenney.jpg) | 
-|  **Dana** | **Becky** | **Grace** |
+| ![](images/Module00_headshots/headshot_mflick.jpg) | ![](images/Module00_headshots/headshot_grkenney.jpg) | ![](images/Module00_headshots/headshot_rcavalca.jpg) |
+|  **Matthew** | **Grace**| **Raymond** |
+| ![](images/Module00_headshots/headshot_meese.jpg) | ![](images/Module00_headshots/headshot_ncarruth.jpg) | ![](images/Module00_headshots/headshot_weishwu.jpg) |
 | | | |
-| ![](images/Module00_headshots/headshot_ncarruth.jpg)| ![](images/Module00_headshots/headshot_rcavalca.jpg)| ![](images/Module00_headshots/headshot_weishwu.jpg)|
-| **Nick** | **Raymond** | **Weisheng** |
-<br/>
+| **Marisa** | **Nick** | **Weisheng** |
+||
+| ![](images/Module00_headshots/headshot_cgates.jpg) |
+| **Chris** |
 
-YOU!
 
 Thank you for participating on our workshop. We welcome your questions and feedback now and in the future.
 

@@ -9,7 +9,7 @@ body, td {
 
 #### [Setup instructions](workshop_setup/setup_instructions.html)
 
-#### [Slack workspace](https://umcoderspaces.slack.com)
+#### [Slack workspace](https://umbioinfcoreworkshops.slack.com)
 
 ---
 
@@ -19,7 +19,7 @@ body, td {
 | Time | Topic : Details |
 | :---  | :---- |
 |  9:00 | [Introductions and Startup](Module00_Introduction.html) |
-|  9:30 | **Sequence QC:** |
+|  9:20 | **Sequence QC:** |
 |       | &nbsp;&nbsp;&nbsp;&nbsp;[Warming Up](Module01_Warming_Up.html) |
 |       | &nbsp;&nbsp;&nbsp;&nbsp;[Quality Control (FASTQs)](Module02_QC.html) |
 |       | &nbsp;&nbsp;&nbsp;&nbsp;[Trimming and MultiQC](Module02optional_Cutadapt_MoreQC.html) |

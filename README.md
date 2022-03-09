@@ -1,56 +1,7 @@
-<style type="text/css">
+This is the custom curriculum for the UM Bioinformatics Core RNA-Seq Demystified Workshop. 
 
-body, td {
-   font-size: 18px;
-}
-</style>
+* This workshop content is licensed under a [Creative Commons Attribution 4 License](https://creativecommons.org/licenses/by/4.0/).
 
-# RNA-seq Demystified
+* The workshop Code of Conduct has been adapted the NumFocus Code of Conduct (https://numfocus.org/code-of-conduct) which itself draws frin from numerous sources, including the Geek Feminism wiki, created by the Ada Initiative and other volunteers, which is under a Creative Commons Zero license, the Contributor Covenant version 1.2.0, the Bokeh Code of Conduct, the SciPy Code of Conduct, the Carpentries Code of Conduct, and the NeurIPS Code of Conduct.
 
-#### [Setup instructions](workshop_setup/setup_instructions.html)
-
-#### [Slack workspace](https://umcoderspaces.slack.com)
-
----
-
-## Schedule
-
-#### Day 1 (Chris & Travis)
-| Time | Topic : Details |
-| :---  | :---- |
-|  9:00 | [Introductions and Startup](Module00_Introduction.html) |
-|  9:30 | **Sequence QC:** |
-|       | &nbsp;&nbsp;&nbsp;&nbsp;[Warming Up](Module01_Warming_Up.html) |
-|       | &nbsp;&nbsp;&nbsp;&nbsp;[Quality Control (FASTQs)](Module02_QC.html) |
-|       | &nbsp;&nbsp;&nbsp;&nbsp;[Trimming and MultiQC](Module02optional_Cutadapt_MoreQC.html) |
-| 11:00 | Break |
-| 11:15 | **Alignment:** |
-|       | &nbsp;&nbsp;&nbsp;&nbsp;[Reference genomes](Module03_Reference_Genomes.html) |
-|       | &nbsp;&nbsp;&nbsp;&nbsp;[Alignment](Module04_Alignment.html) |
-|  1:00 | Day 1 concludes |
-#### Day 2 (Travis & Dana)
-| | |
-| :---  | :---- |
-|  9:00 | Review |
-|  9:10 | **Quantification:** |
-|       | &nbsp;&nbsp;&nbsp;&nbsp;[Count matrix / Alignment QC](Module05_MultiQC_and_Count_Matrix.html) |
-|       | &nbsp;&nbsp;&nbsp;&nbsp;[Additional details and exercise](Module05optional_Additional_Details.html) |
-| 11:00 | Break |
-| 11:15 | **Groups and Modeling:** |
-|       | &nbsp;&nbsp;&nbsp;&nbsp;[Intro to DESeq2](Module06_DEAnalysisSetup.html) |
-|       | &nbsp;&nbsp;&nbsp;&nbsp;[DESeq2 Initialization](Module07_DESeq2Init.html) |
-|       | &nbsp;&nbsp;&nbsp;&nbsp;[Count normalization and model fitting](Module08_DESeq2DE.html) |
-|  1:00 | Day 2 concludes |
-#### Day 3 (Dana)
-| | |
-| :---  | :---- |
-|  9:00 | Review |
-|  9:10 | **Expression plots:** |
-|       | &nbsp;&nbsp;&nbsp;&nbsp;[Sample visualizations for QC](Module09_SampleQCViz.html) |
-| 11:00 | Break |
-| 11:15 | **Differential Expression:** |
-|       | &nbsp;&nbsp;&nbsp;&nbsp;[Comparisons](Module10_DEComparisons.html) |
-|       | &nbsp;&nbsp;&nbsp;&nbsp;[DE Visiualization and Annotation](Module11_DEVisualizations.html)|
-|       | &nbsp;&nbsp;&nbsp;&nbsp;[Bonus Content](Module11X_BonusContent.html)|
-| 12:45 | [Wrap-up](Module99_Wrap_up.html)
-|  1:00 | Day 3 concludes |
+* Sections of the workshop content have been adapted and extended from materials created by the [Harvard Chan Bioinformatics Core (HBC)](http://bioinformatics.sph.harvard.edu/). These are open access materials distributed under the terms of the [Creative Commons Attribution license (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
