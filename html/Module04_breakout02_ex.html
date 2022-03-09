@@ -12,7 +12,7 @@
 <meta name="author" content="UM Bioinformatics Core" />
 
 
-<title>Day 1 - Module 01: Warming up</title>
+<title>Day 1 - Breakout 02</title>
 
 <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -30,9 +30,6 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 <script src="site_libs/navigation-1.1/sourceembed.js"></script>
@@ -238,69 +235,6 @@ $(document).ready(function () {
 
 
 
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
-
-
 
 </head>
 
@@ -308,16 +242,6 @@ div.tocify {
 
 
 <div class="container-fluid main-container">
-
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -454,7 +378,7 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Day 1 - Module 01: Warming up</h1>
+<h1 class="title toc-ignore">Day 1 - Breakout 02</h1>
 <h4 class="author">UM Bioinformatics Core</h4>
 
 </div>
@@ -468,88 +392,33 @@ pre {
   font-size: 12pt
 }
 </style>
-<div id="warming-up" class="section level1" number="1">
-<h1 number="1"><span class="header-section-number">1</span> Warming Up</h1>
-<p>In this module, we will:</p>
+<p><br></p>
+<div id="aligning-all-samples-exercise-breakout" class="section level2">
+<h2>Aligning All Samples Exercise (Breakout):</h2>
+<p><br></p>
+<p>We just learned about how to use RSEM &amp; STAR, but now we need to align all of the rest of our samples to the reference genome. We’ll use the concepts we’ve learned earlier in this breakout exercise.</p>
+<p><br></p>
+<div id="instructions" class="section level3">
+<h3>Instructions:</h3>
+<p><br></p>
 <ul>
-<li>cover basic materials needed</li>
-<li>familiarize ourselves with remote computing</li>
-<li>prepare for later modules</li>
+<li>One group member should share their screen in the breakout room. If nobody volunteers, a helper may randomly select someone.</li>
+<li>The group members should discuss the exercise and work together to find a solution.</li>
+<li>After a solution is found, allow time for all members to complete the exercise.</li>
 </ul>
-<div id="building-blocks" class="section level2" number="1.1">
-<h2 number="1.1"><span class="header-section-number">1.1</span> Building Blocks</h2>
-<p><br> <br> <br> <img src="images/building-blocks.png" width="800" /> <br> <br> <br></p>
-</div>
-<div id="example-files-exercise" class="section level2" number="1.2">
-<h2 number="1.2"><span class="header-section-number">1.2</span> Example Files Exercise:</h2>
-<ol style="list-style-type: decimal">
-<li>Download the zipped archive from the slack channel</li>
-<li>Locate, move (if desired), and unzip it</li>
-<li>Remember how to access these files</li>
-</ol>
-<p><br> <br> <br> <br> <br> <br></p>
-</div>
-<div id="local-vs-remote-exercise" class="section level2" number="1.3">
-<h2 number="1.3"><span class="header-section-number">1.3</span> Local vs remote exercise:</h2>
-<ol style="list-style-type: decimal">
-<li>Become familiar with the different appearance of the local shell</li>
-<li>Briefly explore your local files</li>
-<li>Log in to the aws instance with <code>ssh &lt;username&gt;@bfx-workshop01.med.umich.edu</code></li>
-<li>Become familiar with appearance of the remote shell</li>
-<li>Briefly explore remote files</li>
-<li>Use <code>exit</code> to log off, return to local shell</li>
-</ol>
-<p><br> <br> <br></p>
-<pre><code># Familiarize with local shell appearance
-# Briefly explore your local files
-ls -l
-# Log in to the aws instance via ssh
-ssh &lt;username&gt;@bfx-workshop01.med.umich.edu
-# Familiarize yourself with differences between local and remote shell
-# Briefly explore remote files
-ls -l
-# Log off, return to local shell
-exit</code></pre>
-<p><br> <br> <br></p>
-<details>
-<summary>
-Click here for demonstration of local (git-bash on Windows) vs remote (AWS)
-</summary>
-<p><img src="images/local_v_remote.gif" width="800" /></p>
-</details>
-<p><br> <br> <br></p>
-</div>
-<div id="orientation-exercise" class="section level2" number="1.4">
-<h2 number="1.4"><span class="header-section-number">1.4</span> Orientation exercise</h2>
-<p>Note: We will provide additional time during this exercise to ensure that everyone is prepared to move forward.</p>
-<p>Orientation exercise:</p>
-<ol style="list-style-type: decimal">
-<li>Log in (or confirm logged in) to aws instance</li>
-<li>Ensure in home directory with <code>cd</code></li>
-<li>Use <code>ls</code> to view references</li>
-<li>Use <code>ls</code> to view input fastq files</li>
-<li>Use <code>mkdir</code> to create a folder for our analysis</li>
-</ol>
-<p><br> <br> <br></p>
-<pre><code># Log in to aws remote
-ssh &lt;username&gt;@bfx-workshop01.med.umich.edu
-# Ensure we are in home directory
-cd
-# View our references
-ls ~/RSD_Shell/refs
-# View our input fastq files
-ls ~/RSD_Shell/reads
-# Create a folder for our analysis
-mkdir ~/RSD_Shell/analysis</code></pre>
-<p><br> <br> <br> <br> <br> <br> <img src="images/building-blocks-checkmark.png" width="800" /> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<p><br></p>
+<ul>
+<li>Review what we learned about running RSEM + STAR, to construct an appropriate command for aligning one of our samples.</li>
+<li>Use a bash variable in our alignment command to quickly and easily align samples 2-4.</li>
+<li>View the output, and verify that we have the files we need.</li>
+</ul>
+<p><br></p>
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiRGF5IDEgLSBNb2R1bGUgMDE6IFdhcm1pbmcgdXAiCmF1dGhvcjogIlVNIEJpb2luZm9ybWF0aWNzIENvcmUiCm91dHB1dDoKICAgICAgICBodG1sX2RvY3VtZW50OgogICAgICAgICAgICBpbmNsdWRlczoKICAgICAgICAgICAgICAgIGluX2hlYWRlcjogaGVhZGVyLmh0bWwKICAgICAgICAgICAgdGhlbWU6IHBhcGVyCiAgICAgICAgICAgIHRvYzogdHJ1ZQogICAgICAgICAgICB0b2NfZGVwdGg6IDQKICAgICAgICAgICAgdG9jX2Zsb2F0OiB0cnVlCiAgICAgICAgICAgIG51bWJlcl9zZWN0aW9uczogdHJ1ZQogICAgICAgICAgICBmaWdfY2FwdGlvbjogdHJ1ZQogICAgICAgICAgICBtYXJrZG93bjogR0ZNCiAgICAgICAgICAgIGNvZGVfZG93bmxvYWQ6IHRydWUKLS0tCjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+CmJvZHl7IC8qIE5vcm1hbCAgKi8KICAgICAgZm9udC1zaXplOiAxNHB0OwogIH0KcHJlIHsKICBmb250LXNpemU6IDEycHQKfQo8L3N0eWxlPgoKIyBXYXJtaW5nIFVwCgpJbiB0aGlzIG1vZHVsZSwgd2Ugd2lsbDoKCiogY292ZXIgYmFzaWMgbWF0ZXJpYWxzIG5lZWRlZAoqIGZhbWlsaWFyaXplIG91cnNlbHZlcyB3aXRoIHJlbW90ZSBjb21wdXRpbmcKKiBwcmVwYXJlIGZvciBsYXRlciBtb2R1bGVzCgojIyBCdWlsZGluZyBCbG9ja3MKCjxicj4KPGJyPgo8YnI+CjxpbWcgc3JjPSJpbWFnZXMvYnVpbGRpbmctYmxvY2tzLnBuZyIgd2lkdGg9IjgwMCIgLz4KPGJyPgo8YnI+Cjxicj4KCgojIyBFeGFtcGxlIEZpbGVzIEV4ZXJjaXNlOgoKMS4gRG93bmxvYWQgdGhlIHppcHBlZCBhcmNoaXZlIGZyb20gdGhlIHNsYWNrIGNoYW5uZWwKMi4gTG9jYXRlLCBtb3ZlIChpZiBkZXNpcmVkKSwgYW5kIHVuemlwIGl0CjMuIFJlbWVtYmVyIGhvdyB0byBhY2Nlc3MgdGhlc2UgZmlsZXMKCjxicj4KPGJyPgo8YnI+Cjxicj4KPGJyPgo8YnI+CgojIyBMb2NhbCB2cyByZW1vdGUgZXhlcmNpc2U6CgoxLiBCZWNvbWUgZmFtaWxpYXIgd2l0aCB0aGUgZGlmZmVyZW50IGFwcGVhcmFuY2Ugb2YgdGhlIGxvY2FsIHNoZWxsCjIuIEJyaWVmbHkgZXhwbG9yZSB5b3VyIGxvY2FsIGZpbGVzCjMuIExvZyBpbiB0byB0aGUgYXdzIGluc3RhbmNlIHdpdGggYHNzaCA8dXNlcm5hbWU+QGJmeC13b3Jrc2hvcDAxLm1lZC51bWljaC5lZHVgCjQuIEJlY29tZSBmYW1pbGlhciB3aXRoIGFwcGVhcmFuY2Ugb2YgdGhlIHJlbW90ZSBzaGVsbAo1LiBCcmllZmx5IGV4cGxvcmUgcmVtb3RlIGZpbGVzCjYuIFVzZSBgZXhpdGAgdG8gbG9nIG9mZiwgcmV0dXJuIHRvIGxvY2FsIHNoZWxsCgo8YnI+Cjxicj4KPGJyPgoKYGBgCiMgRmFtaWxpYXJpemUgd2l0aCBsb2NhbCBzaGVsbCBhcHBlYXJhbmNlCiMgQnJpZWZseSBleHBsb3JlIHlvdXIgbG9jYWwgZmlsZXMKbHMgLWwKIyBMb2cgaW4gdG8gdGhlIGF3cyBpbnN0YW5jZSB2aWEgc3NoCnNzaCA8dXNlcm5hbWU+QGJmeC13b3Jrc2hvcDAxLm1lZC51bWljaC5lZHUKIyBGYW1pbGlhcml6ZSB5b3Vyc2VsZiB3aXRoIGRpZmZlcmVuY2VzIGJldHdlZW4gbG9jYWwgYW5kIHJlbW90ZSBzaGVsbAojIEJyaWVmbHkgZXhwbG9yZSByZW1vdGUgZmlsZXMKbHMgLWwKIyBMb2cgb2ZmLCByZXR1cm4gdG8gbG9jYWwgc2hlbGwKZXhpdApgYGAKCgo8YnI+Cjxicj4KPGJyPgoKPGRldGFpbHM+CjxzdW1tYXJ5PkNsaWNrIGhlcmUgZm9yIGRlbW9uc3RyYXRpb24gb2YgbG9jYWwgKGdpdC1iYXNoIG9uIFdpbmRvd3MpIHZzIHJlbW90ZSAoQVdTKTwvc3VtbWFyeT4KCjxpbWcgc3JjPSJpbWFnZXMvbG9jYWxfdl9yZW1vdGUuZ2lmIiB3aWR0aD0iODAwIiAvPgoKPC9kZXRhaWxzPgoKPGJyPgo8YnI+Cjxicj4KCiMjIE9yaWVudGF0aW9uIGV4ZXJjaXNlCgpOb3RlOiBXZSB3aWxsIHByb3ZpZGUgYWRkaXRpb25hbCB0aW1lIGR1cmluZyB0aGlzIGV4ZXJjaXNlIHRvIGVuc3VyZSB0aGF0IGV2ZXJ5b25lIGlzIHByZXBhcmVkIHRvIG1vdmUgZm9yd2FyZC4KCk9yaWVudGF0aW9uIGV4ZXJjaXNlOgoKMS4gTG9nIGluIChvciBjb25maXJtIGxvZ2dlZCBpbikgdG8gYXdzIGluc3RhbmNlCjIuIEVuc3VyZSBpbiBob21lIGRpcmVjdG9yeSB3aXRoIGBjZGAKNC4gVXNlIGBsc2AgdG8gdmlldyByZWZlcmVuY2VzCjUuIFVzZSBgbHNgIHRvIHZpZXcgaW5wdXQgZmFzdHEgZmlsZXMKNi4gVXNlIGBta2RpcmAgdG8gY3JlYXRlIGEgZm9sZGVyIGZvciBvdXIgYW5hbHlzaXMKCjxicj4KPGJyPgo8YnI+CgpgYGAKIyBMb2cgaW4gdG8gYXdzIHJlbW90ZQpzc2ggPHVzZXJuYW1lPkBiZngtd29ya3Nob3AwMS5tZWQudW1pY2guZWR1CiMgRW5zdXJlIHdlIGFyZSBpbiBob21lIGRpcmVjdG9yeQpjZAojIFZpZXcgb3VyIHJlZmVyZW5jZXMKbHMgfi9SU0RfU2hlbGwvcmVmcwojIFZpZXcgb3VyIGlucHV0IGZhc3RxIGZpbGVzCmxzIH4vUlNEX1NoZWxsL3JlYWRzCiMgQ3JlYXRlIGEgZm9sZGVyIGZvciBvdXIgYW5hbHlzaXMKbWtkaXIgfi9SU0RfU2hlbGwvYW5hbHlzaXMKYGBgCgoKPGJyPgo8YnI+Cjxicj4KPGJyPgo8YnI+Cjxicj4KPGltZyBzcmM9ImltYWdlcy9idWlsZGluZy1ibG9ja3MtY2hlY2ttYXJrLnBuZyIgd2lkdGg9IjgwMCIgLz4KPGJyPgo8YnI+Cjxicj4KPGJyPgo8YnI+Cjxicj4KPGJyPgo8YnI+Cjxicj4KPGJyPgo8YnI+Cjxicj4KPGJyPgo8YnI+Cjxicj4K</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiRGF5IDEgLSBCcmVha291dCAwMiIKYXV0aG9yOiAiVU0gQmlvaW5mb3JtYXRpY3MgQ29yZSIKb3V0cHV0OgogICAgICAgIGh0bWxfZG9jdW1lbnQ6CiAgICAgICAgICAgIGluY2x1ZGVzOgogICAgICAgICAgICAgICAgaW5faGVhZGVyOiBoZWFkZXIuaHRtbAogICAgICAgICAgICB0aGVtZTogcGFwZXIKICAgICAgICAgICAgZmlnX2NhcHRpb246IHRydWUKICAgICAgICAgICAgbWFya2Rvd246IEdGTQogICAgICAgICAgICBjb2RlX2Rvd25sb2FkOiB0cnVlCi0tLQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgpib2R5eyAvKiBOb3JtYWwgICovCiAgICAgIGZvbnQtc2l6ZTogMTRwdDsKICB9CnByZSB7CiAgZm9udC1zaXplOiAxMnB0Cn0KPC9zdHlsZT4KCjxicj4KCiMjIEFsaWduaW5nIEFsbCBTYW1wbGVzIEV4ZXJjaXNlIChCcmVha291dCk6Cgo8YnI+CgpXZSBqdXN0IGxlYXJuZWQgYWJvdXQgaG93IHRvIHVzZSBSU0VNICYgU1RBUiwgYnV0IG5vdyB3ZSBuZWVkIHRvIGFsaWduIGFsbCBvZiB0aGUgcmVzdCBvZiBvdXIgc2FtcGxlcyB0byB0aGUgcmVmZXJlbmNlIGdlbm9tZS4gV2UnbGwgdXNlIHRoZSBjb25jZXB0cyB3ZSd2ZSBsZWFybmVkIGVhcmxpZXIgaW4gdGhpcyBicmVha291dCBleGVyY2lzZS4KCjxicj4KCiMjIyBJbnN0cnVjdGlvbnM6Cgo8YnI+CgotIE9uZSBncm91cCBtZW1iZXIgc2hvdWxkIHNoYXJlIHRoZWlyIHNjcmVlbiBpbiB0aGUgYnJlYWtvdXQgcm9vbS4gSWYgbm9ib2R5IHZvbHVudGVlcnMsIGEgaGVscGVyIG1heSByYW5kb21seSBzZWxlY3Qgc29tZW9uZS4KLSBUaGUgZ3JvdXAgbWVtYmVycyBzaG91bGQgZGlzY3VzcyB0aGUgZXhlcmNpc2UgYW5kIHdvcmsgdG9nZXRoZXIgdG8gZmluZCBhIHNvbHV0aW9uLgotIEFmdGVyIGEgc29sdXRpb24gaXMgZm91bmQsIGFsbG93IHRpbWUgZm9yIGFsbCBtZW1iZXJzIHRvIGNvbXBsZXRlIHRoZSBleGVyY2lzZS4KCjxicj4KCi0gUmV2aWV3IHdoYXQgd2UgbGVhcm5lZCBhYm91dCBydW5uaW5nIFJTRU0gKyBTVEFSLCB0byBjb25zdHJ1Y3QgYW4gYXBwcm9wcmlhdGUgY29tbWFuZCBmb3IgYWxpZ25pbmcgb25lIG9mIG91ciBzYW1wbGVzLgotIFVzZSBhIGJhc2ggdmFyaWFibGUgaW4gb3VyIGFsaWdubWVudCBjb21tYW5kIHRvIHF1aWNrbHkgYW5kIGVhc2lseSBhbGlnbiBzYW1wbGVzIDItNC4KLSBWaWV3IHRoZSBvdXRwdXQsIGFuZCB2ZXJpZnkgdGhhdCB3ZSBoYXZlIHRoZSBmaWxlcyB3ZSBuZWVkLgoKPGJyPgo=</div>
 
 
-</div>
-</div>
 
 </div>
 
@@ -583,39 +452,10 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("Module01_Warming_Up.md");
+  window.initializeSourceEmbed("Module04_breakout02_ex.md");
 });
 </script>
 
-<script>
-$(document).ready(function ()  {
-
-    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
-    $('.unlisted.unnumbered').addClass('toc-ignore')
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3,h4",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
