@@ -63,7 +63,7 @@ Here we will finally test for differential expression between our comparisons of
 Now that we have reviewed the plots by sample and determined that our data passed our quality control checks, specifically that the patterns we observe are likely due to our experimental treatments over technical or other confounding factors, we can focus on differential expression testing.
 
 This illustration from the HCB training materials illustrates the basis of the differential expression procedure, where our goal is to compare the distribution of an expressed gene across samples in each treatment groups.
-![](./images/de_theory.png)
+![](./images/de_theory_corrected.png)
 *Image credit: Paul Pavlidis, UBC*
 
 Only where the distributions of each group are sufficiently separated will a gene be considered differentially expressed. 
