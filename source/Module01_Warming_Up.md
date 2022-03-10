@@ -55,14 +55,15 @@ In this module, we will:
 <br>
 <br>
 
-## Local vs remote exercise:
+## Local vs Remote Exercise:
 
-1. Become familiar with the different appearance of the local shell
-2. Briefly explore your local files
+1. Become familiar with the appearance of the local shell
+2. Briefly explore your local files (optional)
 3. Log in to the aws instance with `ssh <username>@bfx-workshop01.med.umich.edu`
 4. Become familiar with appearance of the remote shell
-5. Briefly explore remote files
-6. Use `exit` to log off, return to local shell
+5. Use `ls` to view references
+6. Use `ls` to view input fastq files
+7. Use `mkdir` to create a folder for our analysis
 
 <br>
 <br>
@@ -75,10 +76,12 @@ ls -l
 # Log in to the aws instance via ssh
 ssh <username>@bfx-workshop01.med.umich.edu
 # Familiarize yourself with differences between local and remote shell
-# Briefly explore remote files
-ls -l
-# Log off, return to local shell
-exit
+# View our references
+ls ~/RSD_Shell/refs
+# View our input fastq files
+ls ~/RSD_Shell/reads
+# Create a folder for our analysis
+mkdir ~/RSD_Shell/analysis
 ```
 
 
@@ -96,49 +99,10 @@ exit
 <br>
 <br>
 <br>
-
-## Orientation exercise
-
-Note: We will provide additional time during this exercise to ensure that everyone is prepared to move forward.
-
-Orientation exercise:
-
-1. Log in (or confirm logged in) to aws instance
-2. Ensure in home directory with `cd`
-4. Use `ls` to view references
-5. Use `ls` to view input fastq files
-6. Use `mkdir` to create a folder for our analysis
-
-<br>
-<br>
-<br>
-
-```
-# Log in to aws remote
-ssh <username>@bfx-workshop01.med.umich.edu
-# Ensure we are in home directory
-cd
-# View our references
-ls ~/RSD_Shell/refs
-# View our input fastq files
-ls ~/RSD_Shell/reads
-# Create a folder for our analysis
-mkdir ~/RSD_Shell/analysis
-```
-
-
-<br>
-<br>
-<br>
 <br>
 <br>
 <br>
 <img src="images/building-blocks-checkmark.png" width="800" />
-<br>
-<br>
-<br>
-<br>
-<br>
 <br>
 <br>
 <br>
