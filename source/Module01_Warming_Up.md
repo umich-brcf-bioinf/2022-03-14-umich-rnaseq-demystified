@@ -90,7 +90,7 @@ mkdir ~/RSD_Shell/analysis
 <br>
 
 <details>
-<summary>Click here for demonstration of local (git-bash on Windows) vs remote (AWS)</summary>
+<summary>Click here for demonstration comparing local Windows command prompt vs remote (AWS)</summary>
 
 <img src="images/local_v_remote.gif" width="800" />
 
