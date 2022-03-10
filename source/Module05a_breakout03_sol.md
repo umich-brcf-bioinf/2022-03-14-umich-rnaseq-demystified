@@ -1,3 +1,26 @@
+---
+title: "Day 2 - Breakout 03"
+author: "UM Bioinformatics Core"
+output:
+        html_document:
+            includes:
+                in_header: header.html
+            theme: paper
+            fig_caption: true
+            markdown: GFM
+            code_download: true
+---
+<style type="text/css">
+body{ /* Normal  */
+      font-size: 14pt;
+  }
+pre {
+  font-size: 12pt
+}
+</style>
+
+<br>
+
 ## Transfer MultiQC Report With `scp` Exercise (Breakout)
 
 <br>
