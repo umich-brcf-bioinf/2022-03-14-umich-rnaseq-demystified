@@ -216,7 +216,7 @@ Conda must-know:
 2. Try `which python`
 3. Deactivate our current shared environment with `conda deactivate`
 4. Try `which python` again - Is it different now?
-5. Activate the environment again with `conda activate /rsd/conda/workshop`
+5. Activate the environment again with `conda activate /workshop/conda/rsd`
 
 
 ## Conda Create Simple Exercise
