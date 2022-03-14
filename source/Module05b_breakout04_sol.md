@@ -25,6 +25,10 @@ pre {
 
 <br>
 
+**15 Minutes**
+
+<br>
+
 We've covered the basics of Conda, including how to create environments, as well as activate and deactivate them. We'll use those same ideas in this exercise to create a conda environment with all of the software that we've used so far.
 
 <br>
@@ -49,6 +53,9 @@ In this exercise, we'll use a special tool that enhances Conda, called Mamba. It
     - multiqc
     - star
     - rsem
+- Use two channels when building the environment:
+    - `conda-forge`
+    - `bioconda`
 
 <br>
 
@@ -70,7 +77,7 @@ In this exercise, we'll use a special tool that enhances Conda, called Mamba. It
 
 ```
 # Create a conda environment with Cutadapt, FastQC, MultiQC, STAR, and RSEM.
-mamba create -n RSD_environment -c bioconda cutadapt fastqc multiqc star rsem
+mamba create -n RSD_environment -c conda-forge -c bioconda cutadapt fastqc multiqc star rsem
 # Activate the environment and use which to check for software presence
 conda activate RSD_environment
 which cutadapt
