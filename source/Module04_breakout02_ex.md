@@ -25,6 +25,10 @@ pre {
 
 <br>
 
+**15 Minutes**
+
+<br>
+
 We just learned about how to use RSEM & STAR, but now we need to align all of the rest of our samples to the reference genome. We'll use the concepts we've learned earlier in this breakout exercise.
 
 <br>

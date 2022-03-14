@@ -25,6 +25,10 @@ pre {
 
 <br>
 
+**15 Minutes**
+
+<br>
+
 Now that we've learned the basics of running Cutadapt, we need to trim all the rest of our samples. If you remember from the Computational Foundations course, we learned about using bash variables. Let's try an exercise where we use a bash variable to trim each one of our FASTQ files.
 
 <br>
