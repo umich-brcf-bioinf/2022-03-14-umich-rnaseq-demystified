@@ -220,14 +220,19 @@ Let's try running FastQC on our FASTQ input files.
 
 ```
 # Navigate to analysis directory
-cd ~/analysis
+cd ~/RSD_Shell/analysis
 # View the FastQC help file
 fastqc -h
+# Make a directory for our output
+mkdir out_fastqc
 # Contstruct the call to FastQC
-fastqc -o out_fastqc/ ../data/reads/*.fastq.gz
+fastqc -o out_fastqc/ ../reads/*.fastq.gz
 # Watch the output of FastQC
 # View the output of FastQC (the filenames)
 ```
+
+<br>
+<br>
 
 ---
 

@@ -239,35 +239,13 @@ python --version
 conda deactivate
 ```
 
-## Conda Create Exercises (breakout)
-
-1. Create an environment that has several QC and trimming packages that we used. Make sure to use the `bioconda` channel
-    * cutadapt
-    * fastqc
-    * multiqc
-2. Create an environment that has the aligner & quantification program that we've used. Use the `bioconda` channel
-    * star
-    * rsem
-
-<br>
 <br>
 
-<details>
-<summary>Solutions for Conda Create Exercises</summary>
+## Conda Create Exercise (breakout)
 
-Create a conda environment with Cutadapt, FastQC, and MultiQC. Use the bioconda channel.
+Before starting our breakout exercise, we should make sure that we are on the same page. Follow the link below:
 
-```
-conda create -n qc -c bioconda cutadapt fastqc multiqc
-```
-
-Create a conda environment with STAR and RSEM. Use the bioconda channel.
-
-```
-conda create -n align -c bioconda star rsem
-```
-
-</details>
+[Conda create exercise](Module05b_breakout04_ex.html)
 
 <br>
 <br>

@@ -130,7 +130,6 @@ The `sample_N.genome.bam` alignments file is a special, compressed, version of a
 
 If we were too peek inside of `sample_N.genome.bam`, we would see:
 
-    $ samtools view ~/workshop_data/rsem_star/sample_N.genome.bam | head -2
     NB551521:212:H5L73AFX2:1:11101:16446:1034       0       2       10022660        255     148M    *       0       0       GANAGACAGATATCCTACAAAACACAGAAAGACTAATAAACTCTTATGTTGACTATGAAAGCTGTAAGAAACTTCCAGAAGAAATATTGAAAATGTAGAATAACTGAAGTGTGCTGTGTGTCCATAGCTGTTCTGCTGAGGAAACATT   AA#EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEAEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEAEEEEEEEE<EEEEAEAEEAEA<A<AAAAEEEEEA    NH:i:1  HI:i:1  AS:i:145        NM:i:1  MD:Z:2A145
     NB551521:212:H5L73AFX2:1:11101:16366:1035       0       X       48488697        255     146M    *       0       0       TANGTACGCACACAAATTGATCCATACCTTTACTTCCTTTTTTTCCAGCTACTGAATAAGGGGACCTTTCTATTCCTTTGTGTCTCACCATTTTATTGTCTTTCAGAATCTTCACCTGGTCCATTCATTCCTCTACCCTCTCCTGT     AA#EEEEEEEEEEEEEEEEEEEEEEAEEEEEEEEEEEEEEEEEEE<EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE6EEEAEEEEEEEEEEEEEEEEEAEEEEEEEAAEEEE/<E<AA<<<AAAA<AEE      NH:i:1  HI:i:1  AS:i:143        NM:i:1  MD:Z:2G143
 
@@ -140,9 +139,6 @@ The [SAM format](https://en.wikipedia.org/wiki/SAM_(file_format)) gives informat
 ### Gene-level Quantification
 
 If we were to look at the top 3 lines of `sample_N.genes.results`, we see it is a plain-text file separated by tabs where each row is a gene, and the columns are described the first row.
-
-
-    $ head -3 ~/workshop_data/rsem_star/sample_N.genes.results
 
 
 | Column | Description |
@@ -171,7 +167,7 @@ Alternatively, we can combine these results into a count matrix. The count matri
 # View the help file
 rsem-prepare-reference -h
 # Create/execute the prepare-reference command
-rsem-prepare-reference --gtf ../data/refs/GRCh38.98.chr22reduced.gtf --star --num-threads 1 ../data/refs/GRCh38.98.chr22reduced.fa ../data/refs/GRCh38.98.chr22reduced
+rsem-prepare-reference --gtf ../refs/GRCh38.98.chr22reduced.gtf --star --num-threads 1 ../refs/GRCh38.98.chr22reduced.fa ../refs/GRCh38.98.chr22reduced
 ```
 
 
@@ -184,14 +180,19 @@ rsem-prepare-reference --gtf ../data/refs/GRCh38.98.chr22reduced.gtf --star --nu
 # First create a directory for the aligned results
 mkdir out_rsem
 # Construct an RSEM command to align sample_01 to our reference
-rsem-calculate-expression --star --num-threads 1 --star-gzipped-read-file --star-output-genome-bam --keep-intermediate-files --paired-end out_trimmed/sample_01_R1.trimmed.fastq.gz out_trimmed/sample_01_R2.trimmed.fastq.gz ../data/refs/GRCh38.98.chr22reduced out_rsem/sample_01
+rsem-calculate-expression --star --num-threads 1 --star-gzipped-read-file --star-output-genome-bam --keep-intermediate-files --paired-end out_trimmed/sample_01_R1.trimmed.fastq.gz out_trimmed/sample_01_R2.trimmed.fastq.gz ../refs/GRCh38.98.chr22reduced out_rsem/sample_01
 ```
+<br>
+<br>
 
 ## Aligning All Samples Exercise (Breakout):
 
-1. Use RSEM+STAR command above, to construct the appropriate commands to run `rsem-calculate-expression` on each of our samples. Try using a variable.
-2. View the output, and verify that we have the files we need.
+Before starting our breakout exercise, we should make sure that we are on the same page. Follow the link below:
 
+[Link to alignment breakout exercise](Module04_breakout02_ex.html)
+
+<br>
+<br>
 
 ---
 
