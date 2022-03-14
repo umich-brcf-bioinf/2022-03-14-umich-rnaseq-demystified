@@ -116,7 +116,7 @@ unique(MetaInfo$Gtype.Tx)
 
 
 Next, we'll format our table so that we have the appropriate data type (a ordered [factor](https://swcarpentry.github.io/r-novice-inflammation/12-supp-factors/)) for DESeq2 to recognize our treatment groups and appropriately compare samples.
-```{r SampleInfo2}
+```{r SampleInfoFactor}
 
 MetaInfo$Gtype.Tx <- factor(MetaInfo$Gtype.Tx, levels = c( "wt.Tx", "ko.Tx", 
                                                            "ko.control", "wt.control" ))

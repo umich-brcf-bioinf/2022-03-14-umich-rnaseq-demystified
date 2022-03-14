@@ -241,7 +241,7 @@ To begin our analysis, we'll read in the **raw** count data file, `gene_expected
 CountTable <- read.table("../data/gene_expected_count_trimmed.txt", header = TRUE, row.names = 1)
 ```
 
-```{r DataTable, eval=FALSE}
+```{r DataTable2, eval=FALSE}
 CountTable <- read.table("data/gene_expected_count_trimmed.txt", header = TRUE, row.names = 1)
 ```
 ```{r DataTableCheck, eval=TRUE}
