@@ -25,6 +25,10 @@ pre {
 
 <br>
 
+**15 Minutes**
+
+<br>
+
 Now that we've learned the basics of running Cutadapt, we need to trim all the rest of our samples. If you remember from the Computational Foundations course, we learned about using bash variables. Let's try an exercise where we use a bash variable to trim each one of our FASTQ files.
 
 <br>
@@ -85,5 +89,9 @@ Another solution is to create a for-loop with our bash variable and Cutadapt com
         -o out_trimmed/${SAMPLE}_R1.trimmed.fastq.gz -p out_trimmed/${SAMPLE}_R2.trimmed.fastq.gz \
         ../reads/${SAMPLE}_R1.fastq.gz ../reads/${SAMPLE}_R2.fastq.gz
     done
+
+<br>
+
+> Helper Hint: If suggesting a for-loop approach, it can be helpful to build up a "dry-run" command as a test case, to get learners to be more cognizant of what their code will do. Echoing filenames first might be a good suggestion. 
 
 <br>
