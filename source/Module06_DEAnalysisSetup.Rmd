@@ -121,7 +121,7 @@ This new "DE_Analysis.R" will serve as a record of the analysis steps we follow 
 
 Then we'll create a new directory called `outputs` to use later in our code.
 ```{r CreateOutputs}
-dir.create("./outputs")
+dir.create("./DE_outputs")
 ```
 
 
@@ -300,6 +300,8 @@ sessionInfo()
 Highly recommend using resources like [Bioconductor Support](https://support.bioconductor.org/), [Biostars](https://www.biostars.org/), and [Stack Overflow](https://stackoverflow.com/questions/tagged/r), including threads on specific packages or common bioinformatic tasks.
 
 I personally use one or more of these resources **every day**.
+
+10x also has a helpful [10 tips for biologists learning  bioinformatics](https://www.10xgenomics.com/resources/analysis-guides/10-tips-for-biologists-learning-bioinformatics) included in their resources.
 
 # Summary
 
