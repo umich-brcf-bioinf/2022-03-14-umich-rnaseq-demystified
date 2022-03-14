@@ -25,7 +25,7 @@ pre {
 
 <br>
 
-**10 Minutes**
+**15 Minutes**
 
 <br>
 
