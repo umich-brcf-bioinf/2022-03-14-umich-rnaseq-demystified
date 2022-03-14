@@ -25,6 +25,10 @@ pre {
 
 <br>
 
+**15 Minutes**
+
+<br>
+
 We just tried two new variations of our MultiQC command, one pointed at the directory of our trimmed FastQC results, and another at the whole project directory. For convenience, we've included these reports in the zipped folder you downloaded at the beginning of the class. However, it's also useful to know how to transfer data to/from a remote instance. We'll explore how to use `scp` in this exercise.
 
 <br>

@@ -25,6 +25,10 @@ pre {
 
 <br>
 
+**10 Minutes**
+
+<br>
+
 We just learned about how to use RSEM & STAR, but now we need to align all of the rest of our samples to the reference genome. We'll use the concepts we've learned earlier in this breakout exercise.
 
 <br>
@@ -75,5 +79,9 @@ Another solution is to create a for-loop with our bash variable and alignment co
         ../refs/GRCh38.98.chr22reduced \
         out_rsem/${SAMPLE}
     done
+
+<br>
+
+> Helper Hint: If suggesting a for-loop approach, it can be helpful to build up a "dry-run" command as a test case, to get learners to be more cognizant of what their code will do. Echoing filenames first might be a good suggestion.
 
 <br>
