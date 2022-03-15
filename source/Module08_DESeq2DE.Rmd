@@ -124,16 +124,18 @@ If you executed the commands in the option exercise from Module 07, you can fit 
 
 <details>
     <summary>*Click for fitting a model that includes a covariate*</summary>
-    ```{r FitModelCovariate, eval= FALSE, message=FALSE}
-    dds_patient <- DESeq(dds_patient)
-    ```
-    ```{r FitModelCovariateCheck1,eval=FALSE}
-    resultsNames(dds_patient)
-    ```
+```{r FitModelCovariate, eval= FALSE, message=FALSE}
+dds_patient <- DESeq(dds_patient)
+```
+```{r FitModelCovariateCheck1,eval=FALSE}
+resultsNames(dds_patient)
+```
     If you run through the optional exercises, you can explore the impact of adding a covariate by substituting `dds_patient` for `dds` and re-running those commands since both DESeq2 objects have their data organized in the same way.
 </details>
 
-
+<br>
+<br>
+<br>
 
 
 # Summary
