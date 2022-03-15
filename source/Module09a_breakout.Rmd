@@ -54,7 +54,7 @@ load("rdata/RunningData.RData")
 ```
 
 
-**20 Minutes**
+**15 Minutes**
 
 <br>
 
@@ -85,21 +85,31 @@ It can be useful to visualize to visualize how our samples organize along with t
 <details>
     <summary>*Click for solution*</summary>
 ```{r TestSampleHeatmap}
-topVarGenes <- head(base::order(rowVars(assay(rld)), decreasing=TRUE), 50)
+topVarGenes = rowVars(assay(rld))
+head(topVarGenes)
+
+orderedVars = order(topVarGenes)
+head(orderedVars)
+
+sortedVars = sort(topVarGenes)
+head(sortedVars)
+tail(sortedVars)
+
+?order
+orderedVars = order(topVarGenes, decreasing = TRUE)
+head(topVarGenes[orderedVars])
+
+orderedMat = assay(rld)[orderedVars, ]
+head(orderedMat)
+orderedMat = orderedMat[1:50, ]
+
 ```
 </details>
 
 <br>
 
-- Next, create an object that can store the sample annotations (from the full DESeq2 object `dds`)
-<br>
-```{r GenerateLabels}
-df <- as.data.frame(colData(dds)[,c("Gtype","Tx")])
-```
 
-<br>
-
-- Next, use `pheatmap` to plot the selected `topVarGenes` from `rld`, including using the `annotation_col` to show the column annotations stored in `df`. Scale by row to enhance any clusters of genes with similar expression across samples.  
+- Next, use `pheatmap` to plot the selected `topVarGenes` from `rld`. If you have time, try to scale by row to enhance any clusters of genes with similar expression across samples.  
 
 <br> 
 
@@ -113,8 +123,11 @@ df <- as.data.frame(colData(dds)[,c("Gtype","Tx")])
 <details>
     <summary>*Click for solution*</summary>
 ```{r TestPheatmap}
-p <- pheatmap(assay(rld)[topVarGenes,], show_rownames=FALSE,
-         annotation_col=df, scale = "row")
+# plot with no arguments
+pheatmap(orderedMat)
+
+# plots with row scaled and assigned to 'p' to make writing to file easier
+p <- pheatmap(assay(rld)[topVarGenes,], scale = "row")
 ```
 </details>
 
