@@ -62,14 +62,17 @@ To get started, let's get a sense of what approaches you already use to compare 
 
 ## Logging into the RStudio server
 
-First navigate to server address `bfx-workshop01.med.umich.edu`, using a web browser. You may see a sign-in prompt screen, similar to shown below
+First navigate to server address `bfx-workshop01.med.umich.edu`, using a web browser. You may see a sign-in prompt screen, similar to shown below:
 
+<br>
 ![](./images/RStudioLogInPrompt.png){width=50%}
+<br>
 
-Next, use your unique name and the same password used yesterday to log-in to the server from the command line. You should now see some familiar RStudio panels in your web browser window.
+Next, use your unique name and the same password used yesterday to log-in to the server from the command line. You should now see some familiar RStudio panels in your web browser window:
 
-
+<br>
 ![](./images/RStudioServerWindow.png){width=50%}
+<br>
 
 ## Creating our code file
 
@@ -99,7 +102,11 @@ Such as illustrated in this figure from the Noble review:
 To organize our files for our analysis today, we'll first navigate into the `RSD_R` directory.
 
 We can see that there is only one folder, `data`:
+
+<br>
 ![](./images/RSD_R_screenshot.png){width=50%}
+<br>
+
 However, if we check our working directory, what do we see?
 ```{r SetupDirectories, echo=TRUE, eval=FALSE}
 getwd()
