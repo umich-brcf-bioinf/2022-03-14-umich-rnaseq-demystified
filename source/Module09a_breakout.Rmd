@@ -1,5 +1,5 @@
 ---
-title: "Day 3 - Module 09 PCA Exercise"
+title: "Day 3 - Module 09 Heatmap"
 author: "UM Bioinformatics Core"
 date: "`r Sys.Date()`"
 output:
@@ -36,7 +36,7 @@ code.r{
 
 <br>
 
-## [Breakout Exercise 1]: - PCA plot for raw data
+## [Breakout Exercise 1]: - Heatmap of top genes
 
 <br>
 
@@ -68,57 +68,69 @@ It can be useful to visualize to visualize how our samples organize along with t
 
 - One group member should share their screen in the breakout room. If nobody volunteers, a helper may randomly select someone.
 - The group members should discuss the exercise and work together to find a solution.
-- After a solution is found, allow time for all members to complete the exercise.
+- If there is time after a solution is found, allow all members to complete the exercise.
 
 <br>
 
-- First, create a object named `topVarGenes`
+- First, create a object named `topVarGenes` that stores the top **50** most variable genes from our rlog normalized data (note that each row of `rld` corresponds to a gene).
+- Work from the inside to the outside when stringing together commands and test out each part to ensure the commands you enter are having the expected behavior.
 
-> Hint: The commands we used to plot the normalized data were:
->
+> Hint:
+> 
+> The command `rowVars(assay(rld))` will return the row variance values, the command `base::order` will return an index of the input re-arranged into accending or decending order, and the `head` command can be used to select the firstor last part of several data types. 
+> 
+
+<br>
 
 <details>
     <summary>*Click for solution*</summary>
 ```{r TestSampleHeatmap}
-topVarGenes <- head(order(rowVars(assay(rld)), decreasing=TRUE), 50)
+topVarGenes <- head(base::order(rowVars(assay(rld)), decreasing=TRUE), 50)
 ```
 </details>
 
+<br>
+
+- Next, create an object that can store the sample annotations (from the full DESeq2 object `dds`)
+<br>
 ```{r GenerateLabels}
 df <- as.data.frame(colData(dds)[,c("Gtype","Tx")])
 ```
 
+<br>
+
+- Next, use `pheatmap` to plot the selected `topVarGenes` from `rld`, including using the `annotation_col` to show the column annotations stored in `df`. Scale by row to enhance any clusters of genes with similar expression across samples.  
+
+<br> 
+
+> Hint:
+>
+> We can use `assay(rld)` to access the matrix of normalized data and we can use bracket notation ([rows,]) and the list of rows stored in `topVarGene` to only provide data for the 50 genes of interest.
+> 
+
+<br>
+
+<details>
+    <summary>*Click for solution*</summary>
 ```{r TestPheatmap}
-pheatmap(assay(rld)[topVarGenes,], show_rownames=FALSE,
+p <- pheatmap(assay(rld)[topVarGenes,], show_rownames=FALSE,
          annotation_col=df, scale = "row")
 ```
+</details>
 
+<br>
 
+*Note, as mentioned in this [Biostars post](https://support.bioconductor.org/p/130336/), scaling by row in `pheatmap` will automatically scale the data to Z-scores.*
 
-```{r PheatmapColor}
-colors <- colorRampPalette( rev(brewer.pal(9, "Blues")) )(500)
-pheatmap(assay(rld)[topVarGenes,], show_rownames=FALSE,
-         annotation_col=df, scale = "row", color = colors)
-```
-
+<br>
 
 Finally, to **output** the plot to file, use the `pdf()` function:
 ```{r ExerciseOutput}
 pdf(file = paste0(plotPath, 'Top_heatmap_rlog_', Comparison, '.pdf'), onefile = TRUE)
-plot(gp)
+p
 dev.off()
 ```
 
-### Optional - Scree Plot example 
-
-<details>
-    <summary>*Click for solution*</summary>
-     Solution
-```{r Solution}
-## Add solution 
-```
-    Solution
-</details>
 
 
   
