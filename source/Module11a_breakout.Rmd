@@ -72,31 +72,21 @@ load("rdata/RunningData.RData")
 
 <br>
 
-- First, ...
+- Add the gene symbols stored in the `GeneKey` object to the DE results table `res_WT` and store the new table in an object named `res_WT_anno`.
 
 
 > Hint:
 > 
+> Look at the documentation for either the `merge` function or the tidyverse `join` function for ideas on how to combine the `GeneKey` and `res_WT` tables
 >
+
+```{r CheckKey}
+## check the biomaRt key we created to remember the structure
+head(GeneKey)
+```
 
 <br>
 
-
-## [Breakout Exercise 2]: Build a BioMart query and annotate the DE results
-
-Next,[build your query](https://bioconductor.org/packages/release/bioc/vignettes/biomaRt/inst/doc/accessing_ensembl.html#how-to-build-a-biomart-query) (using the linked help page) to:   
-
-1. Retrieve the information (aka: attributes) we want to add to our DE results table (e.g. `ensembl_gene_id`, `external_gene_name`)...    
-1. Using the `getBM` function (*Hint: use the `?` operator to see documentation for the function*)...
-1. Filtering on the ensembl gene id attribute...    
-1. With values that are the ENSEMBL ids from our experiment (*Hint: the row.names of the
-  `dds` assay)...    
-1. And store it in an object named `GeneKey`.
-
-
-
-Add this to the DE results table `res_WT` and store the new table in an object named `res_WT_anno`. 
-*Hint: look at the documentation for either the `merge` function or the tidyverse `join` function and make sure to add a column to hold the gene ids prior to adding the annotations.
 
 <details>
     <summary>*Click for solution for adding annotations*</summary>
@@ -120,7 +110,7 @@ res_WT_anno <- merge(GeneKey, res_WT_anno, by.x = "ensembl_gene_id", by.y="genes
 
 head(res_WT_anno)
 ```
-    Notice that not all genes were annotated with an ENSEMBl gene id or gene description. While we are able to annotate our results, we should be very cautious as the gene symbol is not a good unique identifier plus we did not use a UCSC annotation resource so the HUGO gene symbol may not always match. However, this code is similar to the steps needed to annotate ENSEMBL id based results, like what would have been generated from yesterday's alignments, with more interpretable gene symbols.
+    Notice that not all genes were annotated with an ENSEMBl gene id or gene description. While we are able to annotate our results, this is a helpful reminder that gene symbol is often not a good unique identifier.
 
 </details>
 

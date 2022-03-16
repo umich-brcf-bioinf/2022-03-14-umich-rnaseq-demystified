@@ -77,8 +77,8 @@ It can be useful to visualize to visualize how our samples organize along with t
 
 > Hint:
 > 
-> The command `rowVars(assay(rld))` will return the row variance values, the command `base::order` will return an index of the input re-arranged into accending or decending order, and the `head` command can be used to select the firstor last part of several data types. 
-> 
+> The command `rowVars(assay(rld))` will return the row variance values, the command `base::order` will return an index of the input re-arranged into accending or decending order, and the `head` command or index referencing can be used to select the firstor last part of several data types. 
+
 
 <br>
 
@@ -101,7 +101,12 @@ head(topVarGenes[orderedVars])
 
 orderedMat = assay(rld)[orderedVars, ]
 head(orderedMat)
+
+# 
 orderedMat = orderedMat[1:50, ]
+
+## Alternatively
+orderedMat = head(orderedMat, 50)
 
 ```
 </details>
