@@ -76,7 +76,7 @@ connect to enable gene expression analysis from bulk RNA-Seq data.
     (We are considering offering a Computational Reproducibility workshop that
     would cover this.) For the intrepid, see relevant links below:
     - [Installing Conda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html#regular-installation)
-    - [Conda environment YAML](https://github.com/umich-brcf-bioinf/2022-03-15-umich-rnaseq-demystified/blob/master/server_setup/conda_setup/workshop-rsd.yaml)
+    - [Conda environment YAML](https://github.com/umich-brcf-bioinf/2022-03-14-umich-rnaseq-demystified/blob/main/server_setup/conda_setup/workshop-rsd.yaml)
     - [Setting up R/R-Studio](workshop_setup/setup_instructions_advanced.html)
 
 
