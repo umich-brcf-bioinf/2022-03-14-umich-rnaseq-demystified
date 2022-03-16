@@ -154,7 +154,7 @@ dev.off()
 
 **Checkpoint**: *If generated and saved the `p.all` PCA plot, please indicate with the green 'check' button. Otherwise, please use  use the red 'x' button in your zoom reaction panel to have this step repeated.*
 
-## [Breakout Exercise 1]: - Imagine a heatmap
+## [Breakout Exercise 1] - Imagine a heatmap
 
 It can be useful to visualize to visualize how our samples organize along with the expression pattern of individual genes. We will create a heatmap of the top most variable genes using the `pheatmap` function.
 
