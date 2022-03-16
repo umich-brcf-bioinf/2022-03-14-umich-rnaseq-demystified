@@ -84,6 +84,7 @@ It can be useful to visualize to visualize how our samples organize along with t
 
 <details>
     <summary>*Click for solution*</summary>
+    Helpers - it may be helpful to guide learners through testing the steps needed to select the top 50 most variable genes. The below example is one possible solution.
 ```{r TestSampleHeatmap}
 topVarGenes = rowVars(assay(rld))
 head(topVarGenes)
