@@ -11,7 +11,7 @@
 
 <meta name="author" content="UM Bioinformatics Core" />
 
-<meta name="date" content="2022-03-15" />
+<meta name="date" content="2022-03-16" />
 
 <title>Day 3 - Module 11 Gene Annotations</title>
 
@@ -455,9 +455,9 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Day 3 - Module 11: Gene Annotations</h1>
+<h1 class="title toc-ignore">Day 3 - Module 11 Gene Annotations</h1>
 <h4 class="author">UM Bioinformatics Core</h4>
-<h4 class="date">2022-03-15</h4>
+<h4 class="date">2022-03-16</h4>
 
 </div>
 
@@ -480,8 +480,10 @@ code.r{
     }
 </style>
 <p><br></p>
-<div id="breakout-exercise-2---finding-annotations" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> [Breakout Exercise 2] - Finding annotations</h1>
+<div id="breakout-exercise-2---finding-annotations"
+class="section level1" number="1">
+<h1><span class="header-section-number">1</span> [Breakout Exercise 2] -
+Finding annotations</h1>
 <p><br></p>
 <p><strong>15 Minutes</strong></p>
 <p><br></p>
@@ -490,17 +492,24 @@ code.r{
 <h3><span class="header-section-number">1.0.1</span> Instructions:</h3>
 <p><br></p>
 <ul>
-<li>One group member should share their screen in the breakout room. If nobody volunteers, a helper may randomly select someone.</li>
-<li>The group members should discuss the exercise and work together to find a solution.</li>
-<li>If there is time after a solution is found, allow all members to complete the exercise.</li>
+<li>One group member should share their screen in the breakout room. If
+nobody volunteers, a helper may randomly select someone.</li>
+<li>The group members should discuss the exercise and work together to
+find a solution.</li>
+<li>If there is time after a solution is found, allow all members to
+complete the exercise.</li>
 </ul>
 <p><br></p>
 <ul>
-<li>Add the gene symbols stored in the <code>GeneKey</code> object to the DE results table <code>res_WT</code> and store the new table in an object named <code>res_WT_anno</code>.</li>
+<li>Add the gene symbols stored in the <code>GeneKey</code> object to
+the DE results table <code>res_WT</code> and store the new table in an
+object named <code>res_WT_anno</code>.</li>
 </ul>
 <blockquote>
 <p>Hint:</p>
-<p>Look at the documentation for either the <code>merge</code> function or the tidyverse <code>join</code> function for ideas on how to combine the <code>GeneKey</code> and <code>res_WT</code> tables</p>
+<p>Look at the documentation for either the <code>merge</code> function
+or the tidyverse <code>join</code> function for ideas on how to combine
+the <code>GeneKey</code> and <code>res_WT</code> tables</p>
 </blockquote>
 <pre class="r"><code>## check the biomaRt key we created to remember the structure
 head(GeneKey)</code></pre>
@@ -516,7 +525,11 @@ head(GeneKey)</code></pre>
 <summary>
 <em>Click for solution for adding annotations</em>
 </summary>
-<p>First, create a new table called <code>res_WT_anno</code> that includes a column with the ENSEMBL ids named <code>genes</code> using the <code>mutate</code> function. Then use the <code>left_join</code> function to combine the <code>GeneKey</code> table with the <code>res_WT</code> DE results.</p>
+<p>First, create a new table called <code>res_WT_anno</code> that
+includes a column with the ENSEMBL ids named <code>genes</code> using
+the <code>mutate</code> function. Then use the <code>left_join</code>
+function to combine the <code>GeneKey</code> table with the
+<code>res_WT</code> DE results.</p>
 <pre class="r"><code>res_WT_anno &lt;- as.data.frame(res_WT) %&gt;%
   mutate(genes = row.names(res_WT)) %&gt;%
   left_join(GeneKey, by =c(&quot;genes&quot; = &quot;ensembl_gene_id&quot;)) %&gt;%
@@ -560,12 +573,15 @@ head(res_WT_anno)</code></pre>
 ## 4 0.5573780290 0.804647138
 ## 5 0.0337489531          NA
 ## 6 0.9615479086 0.987888734</code></pre>
-<p>Notice that not all genes were annotated with an ENSEMBl gene id or gene description. While we are able to annotate our results, this is a helpful reminder that gene symbol is often not a good unique identifier.</p>
+<p>Notice that not all genes were annotated with an ENSEMBl gene id or
+gene description. While we are able to annotate our results, this is a
+helpful reminder that gene symbol is often not a good unique
+identifier.</p>
 </details>
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiRGF5IDMgLSBNb2R1bGUgMDkgSGVhdG1hcCIKYXV0aG9yOiAiVU0gQmlvaW5mb3JtYXRpY3MgQ29yZSIKZGF0ZTogImByIFN5cy5EYXRlKClgIgpvdXRwdXQ6CiAgICAgICAgaHRtbF9kb2N1bWVudDoKICAgICAgICAgICAgaW5jbHVkZXM6CiAgICAgICAgICAgICAgICBpbl9oZWFkZXI6IGhlYWRlci5odG1sCiAgICAgICAgICAgIHRoZW1lOiBwYXBlcgogICAgICAgICAgICB0b2M6IHRydWUKICAgICAgICAgICAgdG9jX2RlcHRoOiA0CiAgICAgICAgICAgIHRvY19mbG9hdDogdHJ1ZQogICAgICAgICAgICBudW1iZXJfc2VjdGlvbnM6IHRydWUKICAgICAgICAgICAgZmlnX2NhcHRpb246IHRydWUKICAgICAgICAgICAgbWFya2Rvd246IEdGTQogICAgICAgICAgICBjb2RlX2Rvd25sb2FkOiB0cnVlCi0tLQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgpib2R5eyAvKiBOb3JtYWwgICovCiAgICAgIGZvbnQtc2l6ZTogMTRwdDsKICB9CnByZSB7CiAgZm9udC1zaXplOiAxMnB0Cn0KY29kZS5yewogIGZvbnQtc2l6ZTogMTJwdDsKfQo8L3N0eWxlPgoKPCEtLS0gQWxsb3cgdGhlIHBhZ2UgdG8gYmUgd2lkZXIgLS0tPgo8c3R5bGU+CiAgICBib2R5IC5tYWluLWNvbnRhaW5lciB7CiAgICAgICAgbWF4LXdpZHRoOiAxMjAwcHg7CiAgICB9Cjwvc3R5bGU+Cgo8YnI+CgojIFtCcmVha291dCBFeGVyY2lzZSAyXSAtIEZpbmRpbmcgYW5ub3RhdGlvbnMKCjxicj4KCgpgYGB7ciBNb2R1bGVzLCBldmFsPVRSVUUsIGVjaG89RkFMU0UsIG1lc3NhZ2U9RkFMU0UsIHdhcm5pbmc9RkFMU0V9CmxpYnJhcnkoREVTZXEyKQpsaWJyYXJ5KGdncGxvdDIpCmxpYnJhcnkodGlkeXIpCmxpYnJhcnkoZHBseXIpCmxpYnJhcnkobWF0cml4U3RhdHMpCmxpYnJhcnkoZ2dyZXBlbCkKbGlicmFyeShwaGVhdG1hcCkKbGlicmFyeShSQ29sb3JCcmV3ZXIpCmxvYWQoInJkYXRhL1J1bm5pbmdEYXRhLlJEYXRhIikKYGBgCgoKKioxNSBNaW51dGVzKioKCjxicj4KCgoKPGJyPgoKIyMjIEluc3RydWN0aW9uczoKCjxicj4KCi0gT25lIGdyb3VwIG1lbWJlciBzaG91bGQgc2hhcmUgdGhlaXIgc2NyZWVuIGluIHRoZSBicmVha291dCByb29tLiBJZiBub2JvZHkgdm9sdW50ZWVycywgYSBoZWxwZXIgbWF5IHJhbmRvbWx5IHNlbGVjdCBzb21lb25lLgotIFRoZSBncm91cCBtZW1iZXJzIHNob3VsZCBkaXNjdXNzIHRoZSBleGVyY2lzZSBhbmQgd29yayB0b2dldGhlciB0byBmaW5kIGEgc29sdXRpb24uCi0gSWYgdGhlcmUgaXMgdGltZSBhZnRlciBhIHNvbHV0aW9uIGlzIGZvdW5kLCBhbGxvdyBhbGwgbWVtYmVycyB0byBjb21wbGV0ZSB0aGUgZXhlcmNpc2UuCgo8YnI+CgotIEFkZCB0aGUgZ2VuZSBzeW1ib2xzIHN0b3JlZCBpbiB0aGUgYEdlbmVLZXlgIG9iamVjdCB0byB0aGUgREUgcmVzdWx0cyB0YWJsZSBgcmVzX1dUYCBhbmQgc3RvcmUgdGhlIG5ldyB0YWJsZSBpbiBhbiBvYmplY3QgbmFtZWQgYHJlc19XVF9hbm5vYC4KCgo+IEhpbnQ6Cj4gCj4gTG9vayBhdCB0aGUgZG9jdW1lbnRhdGlvbiBmb3IgZWl0aGVyIHRoZSBgbWVyZ2VgIGZ1bmN0aW9uIG9yIHRoZSB0aWR5dmVyc2UgYGpvaW5gIGZ1bmN0aW9uIGZvciBpZGVhcyBvbiBob3cgdG8gY29tYmluZSB0aGUgYEdlbmVLZXlgIGFuZCBgcmVzX1dUYCB0YWJsZXMKPgoKYGBge3IgQ2hlY2tLZXl9CiMjIGNoZWNrIHRoZSBiaW9tYVJ0IGtleSB3ZSBjcmVhdGVkIHRvIHJlbWVtYmVyIHRoZSBzdHJ1Y3R1cmUKaGVhZChHZW5lS2V5KQpgYGAKCjxicj4KCgo8ZGV0YWlscz4KICAgIDxzdW1tYXJ5PipDbGljayBmb3Igc29sdXRpb24gZm9yIGFkZGluZyBhbm5vdGF0aW9ucyo8L3N1bW1hcnk+CiAgICBGaXJzdCwgY3JlYXRlIGEgbmV3IHRhYmxlIGNhbGxlZCBgcmVzX1dUX2Fubm9gIHRoYXQgaW5jbHVkZXMgYSBjb2x1bW4gd2l0aCB0aGUgRU5TRU1CTCBpZHMgbmFtZWQgYGdlbmVzYCB1c2luZyB0aGUgYG11dGF0ZWAgZnVuY3Rpb24uIFRoZW4gdXNlIHRoZSBgbGVmdF9qb2luYCBmdW5jdGlvbiB0byBjb21iaW5lIHRoZSBgR2VuZUtleWAgdGFibGUgd2l0aCB0aGUgYHJlc19XVGAgREUgcmVzdWx0cy4KYGBge3IgdXBkYXRlREVUYWJsZVRpZHlyfQpyZXNfV1RfYW5ubyA8LSBhcy5kYXRhLmZyYW1lKHJlc19XVCkgJT4lCiAgbXV0YXRlKGdlbmVzID0gcm93Lm5hbWVzKHJlc19XVCkpICU+JQogIGxlZnRfam9pbihHZW5lS2V5LCBieSA9YygiZ2VuZXMiID0gImVuc2VtYmxfZ2VuZV9pZCIpKSAlPiUKICByZWxvY2F0ZShjKCJnZW5lcyIsICJleHRlcm5hbF9nZW5lX25hbWUiKSkgIyBvcHRpb25hbGx5LCByZS1vcmRlciBjb2x1bW5zIHRvIG1ha2Ugb3V0cHV0IG1vcmUgcmVhZGFibGUKCmhlYWQocmVzX1dUX2Fubm8pCmBgYAogICAgQWx0ZXJuYXRpdmVseSwgaWYgeW91IGFyZSBtb3JlIGZhbWlsaWFyIHdpdGggYmFzZSBmdW5jdGlvbnM6CmBgYHtyIHVwZGF0ZURFVGFibGVCYXNlfQpyZXNfV1RfYW5ubyA8LSByZXNfV1QgIyBjb3B5IHRhYmxlCnJlc19XVF9hbm5vIDwtIGNiaW5kKGdlbmVzPXJvdy5uYW1lcyhyZXNfV1RfYW5ubyksIHJlc19XVF9hbm5vWyAsYygxOjYpXSkKcmVzX1dUX2Fubm8gPC0gYXMuZGF0YS5mcmFtZShyZXNfV1RfYW5ubykKCiMgY29tYmluZSB0aGUgdHdvIHRhYmxlcyB1c2luZyB0aGUgbWVyZ2UgZnVuY3Rpb24gKHNpbWlsYXIgdG8gam9pbiBmcm9tIGB0aWR5dmVyc2VgKQpyZXNfV1RfYW5ubyA8LSBtZXJnZShHZW5lS2V5LCByZXNfV1RfYW5ubywgYnkueCA9ICJlbnNlbWJsX2dlbmVfaWQiLCBieS55PSJnZW5lcyIsIGFsbC54ID0gRkFMU0UsIGFsbC55ID0gVFJVRSkKCmhlYWQocmVzX1dUX2Fubm8pCmBgYAogICAgTm90aWNlIHRoYXQgbm90IGFsbCBnZW5lcyB3ZXJlIGFubm90YXRlZCB3aXRoIGFuIEVOU0VNQmwgZ2VuZSBpZCBvciBnZW5lIGRlc2NyaXB0aW9uLiBXaGlsZSB3ZSBhcmUgYWJsZSB0byBhbm5vdGF0ZSBvdXIgcmVzdWx0cywgdGhpcyBpcyBhIGhlbHBmdWwgcmVtaW5kZXIgdGhhdCBnZW5lIHN5bWJvbCBpcyBvZnRlbiBub3QgYSBnb29kIHVuaXF1ZSBpZGVudGlmaWVyLgoKPC9kZXRhaWxzPgoKICAKYGBge3IgV3JpdGVPdXQuUkRhdGEsIGV2YWw9RkFMU0UsIGVjaG89RkFMU0UsIG1lc3NhZ2U9RkFMU0UsIHdhcm5pbmc9RkFMU0V9CiNIaWRkZW4gY29kZSBibG9jayB0byB3cml0ZSBvdXQgZGF0YSBmb3Iga25pdHRpbmcKc2F2ZS5pbWFnZShmaWxlID0gInJkYXRhL1J1bm5pbmdEYXRhLlJEYXRhIikKYGBgCgoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiRGF5IDMgLSBNb2R1bGUgMTEgR2VuZSBBbm5vdGF0aW9ucyIKYXV0aG9yOiAiVU0gQmlvaW5mb3JtYXRpY3MgQ29yZSIKZGF0ZTogImByIFN5cy5EYXRlKClgIgpvdXRwdXQ6CiAgICAgICAgaHRtbF9kb2N1bWVudDoKICAgICAgICAgICAgaW5jbHVkZXM6CiAgICAgICAgICAgICAgICBpbl9oZWFkZXI6IGhlYWRlci5odG1sCiAgICAgICAgICAgIHRoZW1lOiBwYXBlcgogICAgICAgICAgICB0b2M6IHRydWUKICAgICAgICAgICAgdG9jX2RlcHRoOiA0CiAgICAgICAgICAgIHRvY19mbG9hdDogdHJ1ZQogICAgICAgICAgICBudW1iZXJfc2VjdGlvbnM6IHRydWUKICAgICAgICAgICAgZmlnX2NhcHRpb246IHRydWUKICAgICAgICAgICAgbWFya2Rvd246IEdGTQogICAgICAgICAgICBjb2RlX2Rvd25sb2FkOiB0cnVlCi0tLQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgpib2R5eyAvKiBOb3JtYWwgICovCiAgICAgIGZvbnQtc2l6ZTogMTRwdDsKICB9CnByZSB7CiAgZm9udC1zaXplOiAxMnB0Cn0KY29kZS5yewogIGZvbnQtc2l6ZTogMTJwdDsKfQo8L3N0eWxlPgoKPCEtLS0gQWxsb3cgdGhlIHBhZ2UgdG8gYmUgd2lkZXIgLS0tPgo8c3R5bGU+CiAgICBib2R5IC5tYWluLWNvbnRhaW5lciB7CiAgICAgICAgbWF4LXdpZHRoOiAxMjAwcHg7CiAgICB9Cjwvc3R5bGU+Cgo8YnI+CgojIFtCcmVha291dCBFeGVyY2lzZSAyXSAtIEZpbmRpbmcgYW5ub3RhdGlvbnMKCjxicj4KCgpgYGB7ciBNb2R1bGVzLCBldmFsPVRSVUUsIGVjaG89RkFMU0UsIG1lc3NhZ2U9RkFMU0UsIHdhcm5pbmc9RkFMU0V9CmxpYnJhcnkoREVTZXEyKQpsaWJyYXJ5KGdncGxvdDIpCmxpYnJhcnkodGlkeXIpCmxpYnJhcnkoZHBseXIpCmxpYnJhcnkobWF0cml4U3RhdHMpCmxpYnJhcnkoZ2dyZXBlbCkKbGlicmFyeShwaGVhdG1hcCkKbGlicmFyeShSQ29sb3JCcmV3ZXIpCmxvYWQoInJkYXRhL1J1bm5pbmdEYXRhLlJEYXRhIikKYGBgCgoKKioxNSBNaW51dGVzKioKCjxicj4KCgoKPGJyPgoKIyMjIEluc3RydWN0aW9uczoKCjxicj4KCi0gT25lIGdyb3VwIG1lbWJlciBzaG91bGQgc2hhcmUgdGhlaXIgc2NyZWVuIGluIHRoZSBicmVha291dCByb29tLiBJZiBub2JvZHkgdm9sdW50ZWVycywgYSBoZWxwZXIgbWF5IHJhbmRvbWx5IHNlbGVjdCBzb21lb25lLgotIFRoZSBncm91cCBtZW1iZXJzIHNob3VsZCBkaXNjdXNzIHRoZSBleGVyY2lzZSBhbmQgd29yayB0b2dldGhlciB0byBmaW5kIGEgc29sdXRpb24uCi0gSWYgdGhlcmUgaXMgdGltZSBhZnRlciBhIHNvbHV0aW9uIGlzIGZvdW5kLCBhbGxvdyBhbGwgbWVtYmVycyB0byBjb21wbGV0ZSB0aGUgZXhlcmNpc2UuCgo8YnI+CgotIEFkZCB0aGUgZ2VuZSBzeW1ib2xzIHN0b3JlZCBpbiB0aGUgYEdlbmVLZXlgIG9iamVjdCB0byB0aGUgREUgcmVzdWx0cyB0YWJsZSBgcmVzX1dUYCBhbmQgc3RvcmUgdGhlIG5ldyB0YWJsZSBpbiBhbiBvYmplY3QgbmFtZWQgYHJlc19XVF9hbm5vYC4KCgo+IEhpbnQ6Cj4gCj4gTG9vayBhdCB0aGUgZG9jdW1lbnRhdGlvbiBmb3IgZWl0aGVyIHRoZSBgbWVyZ2VgIGZ1bmN0aW9uIG9yIHRoZSB0aWR5dmVyc2UgYGpvaW5gIGZ1bmN0aW9uIGZvciBpZGVhcyBvbiBob3cgdG8gY29tYmluZSB0aGUgYEdlbmVLZXlgIGFuZCBgcmVzX1dUYCB0YWJsZXMKPgoKYGBge3IgQ2hlY2tLZXl9CiMjIGNoZWNrIHRoZSBiaW9tYVJ0IGtleSB3ZSBjcmVhdGVkIHRvIHJlbWVtYmVyIHRoZSBzdHJ1Y3R1cmUKaGVhZChHZW5lS2V5KQpgYGAKCjxicj4KCgo8ZGV0YWlscz4KICAgIDxzdW1tYXJ5PipDbGljayBmb3Igc29sdXRpb24gZm9yIGFkZGluZyBhbm5vdGF0aW9ucyo8L3N1bW1hcnk+CiAgICBGaXJzdCwgY3JlYXRlIGEgbmV3IHRhYmxlIGNhbGxlZCBgcmVzX1dUX2Fubm9gIHRoYXQgaW5jbHVkZXMgYSBjb2x1bW4gd2l0aCB0aGUgRU5TRU1CTCBpZHMgbmFtZWQgYGdlbmVzYCB1c2luZyB0aGUgYG11dGF0ZWAgZnVuY3Rpb24uIFRoZW4gdXNlIHRoZSBgbGVmdF9qb2luYCBmdW5jdGlvbiB0byBjb21iaW5lIHRoZSBgR2VuZUtleWAgdGFibGUgd2l0aCB0aGUgYHJlc19XVGAgREUgcmVzdWx0cy4KYGBge3IgdXBkYXRlREVUYWJsZVRpZHlyfQpyZXNfV1RfYW5ubyA8LSBhcy5kYXRhLmZyYW1lKHJlc19XVCkgJT4lCiAgbXV0YXRlKGdlbmVzID0gcm93Lm5hbWVzKHJlc19XVCkpICU+JQogIGxlZnRfam9pbihHZW5lS2V5LCBieSA9YygiZ2VuZXMiID0gImVuc2VtYmxfZ2VuZV9pZCIpKSAlPiUKICByZWxvY2F0ZShjKCJnZW5lcyIsICJleHRlcm5hbF9nZW5lX25hbWUiKSkgIyBvcHRpb25hbGx5LCByZS1vcmRlciBjb2x1bW5zIHRvIG1ha2Ugb3V0cHV0IG1vcmUgcmVhZGFibGUKCmhlYWQocmVzX1dUX2Fubm8pCmBgYAogICAgQWx0ZXJuYXRpdmVseSwgaWYgeW91IGFyZSBtb3JlIGZhbWlsaWFyIHdpdGggYmFzZSBmdW5jdGlvbnM6CmBgYHtyIHVwZGF0ZURFVGFibGVCYXNlfQpyZXNfV1RfYW5ubyA8LSByZXNfV1QgIyBjb3B5IHRhYmxlCnJlc19XVF9hbm5vIDwtIGNiaW5kKGdlbmVzPXJvdy5uYW1lcyhyZXNfV1RfYW5ubyksIHJlc19XVF9hbm5vWyAsYygxOjYpXSkKcmVzX1dUX2Fubm8gPC0gYXMuZGF0YS5mcmFtZShyZXNfV1RfYW5ubykKCiMgY29tYmluZSB0aGUgdHdvIHRhYmxlcyB1c2luZyB0aGUgbWVyZ2UgZnVuY3Rpb24gKHNpbWlsYXIgdG8gam9pbiBmcm9tIGB0aWR5dmVyc2VgKQpyZXNfV1RfYW5ubyA8LSBtZXJnZShHZW5lS2V5LCByZXNfV1RfYW5ubywgYnkueCA9ICJlbnNlbWJsX2dlbmVfaWQiLCBieS55PSJnZW5lcyIsIGFsbC54ID0gRkFMU0UsIGFsbC55ID0gVFJVRSkKCmhlYWQocmVzX1dUX2Fubm8pCmBgYAogICAgTm90aWNlIHRoYXQgbm90IGFsbCBnZW5lcyB3ZXJlIGFubm90YXRlZCB3aXRoIGFuIEVOU0VNQmwgZ2VuZSBpZCBvciBnZW5lIGRlc2NyaXB0aW9uLiBXaGlsZSB3ZSBhcmUgYWJsZSB0byBhbm5vdGF0ZSBvdXIgcmVzdWx0cywgdGhpcyBpcyBhIGhlbHBmdWwgcmVtaW5kZXIgdGhhdCBnZW5lIHN5bWJvbCBpcyBvZnRlbiBub3QgYSBnb29kIHVuaXF1ZSBpZGVudGlmaWVyLgoKPC9kZXRhaWxzPgoKICAKYGBge3IgV3JpdGVPdXQuUkRhdGEsIGV2YWw9RkFMU0UsIGVjaG89RkFMU0UsIG1lc3NhZ2U9RkFMU0UsIHdhcm5pbmc9RkFMU0V9CiNIaWRkZW4gY29kZSBibG9jayB0byB3cml0ZSBvdXQgZGF0YSBmb3Iga25pdHRpbmcKc2F2ZS5pbWFnZShmaWxlID0gInJkYXRhL1J1bm5pbmdEYXRhLlJEYXRhIikKYGBgCgoK</div>
 
 
 </div>
