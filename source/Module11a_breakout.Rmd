@@ -1,5 +1,5 @@
 ---
-title: "Day 3 - Module 09 Heatmap"
+title: "Day 3 - Module 11 Gene Annotations"
 author: "UM Bioinformatics Core"
 date: "`r Sys.Date()`"
 output:
