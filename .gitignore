@@ -4,6 +4,7 @@
 **/~$*.pptx
 figures/
 tables/
+html/**/*.md
 html/data/
 html/figures/
 html/images/source
